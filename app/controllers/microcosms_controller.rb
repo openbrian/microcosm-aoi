@@ -1,5 +1,6 @@
 class MicrocosmsController < ApplicationController
   before_action :set_microcosm, only: [:show, :edit, :update, :destroy]
+  before_action :set_microcosm_by_key, only: [:show_by_key]
 
   # GET /microcosms
   # GET /microcosms.json
@@ -10,6 +11,12 @@ class MicrocosmsController < ApplicationController
   # GET /microcosms/1
   # GET /microcosms/1.json
   def show
+  end
+
+  # GET /microcosms/mycity
+  # GET /microcosms/mycity.json
+  def show_by_key
+    render action: "show"
   end
 
   # GET /microcosms/new
@@ -65,6 +72,10 @@ class MicrocosmsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_microcosm
       @microcosm = Microcosm.find(params[:id])
+    end
+
+    def set_microcosm_by_key
+      @microcosm = Microcosm.find_by(key: params[:key])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
