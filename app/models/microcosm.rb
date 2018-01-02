@@ -1,0 +1,2 @@
+class Microcosm < ApplicationRecord
+end

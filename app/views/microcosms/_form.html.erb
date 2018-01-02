@@ -1,0 +1,32 @@
+<%= form_with(model: microcosm, local: true) do |form| %>
+  <% if microcosm.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(microcosm.errors.count, "error") %> prohibited this microcosm from being saved:</h2>
+
+      <ul>
+      <% microcosm.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name, id: :microcosm_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :key %>
+    <%= form.text_field :key, id: :microcosm_key %>
+  </div>
+
+  <div class="field">
+    <%= form.label :members_num %>
+    <%= form.number_field :members_num, id: :microcosm_members_num %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

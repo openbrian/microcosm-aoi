@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Microcosms</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Key</th>
+      <th>Members num</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @microcosms.each do |microcosm| %>
+      <tr>
+        <td><%= microcosm.name %></td>
+        <td><%= microcosm.key %></td>
+        <td><%= microcosm.members_num %></td>
+        <td><%= link_to 'Show', microcosm %></td>
+        <td><%= link_to 'Edit', edit_microcosm_path(microcosm) %></td>
+        <td><%= link_to 'Destroy', microcosm, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Microcosm', new_microcosm_path %>
