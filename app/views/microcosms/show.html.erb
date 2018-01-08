@@ -21,9 +21,9 @@
 <div id='Members'>
   <h2>Members</h2>
   <div class='members'>
-    <% @microcosm.users.each do |member| %>
+    <% @microcosm.members.each do |member| %>
       <tr>
-        <td><%= member.name %></td>
+        <td><%= member.user.name %></td>
       </tr>
     <% end %>
   </div>
