@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180102024414) do
+ActiveRecord::Schema.define(version: 20180108042702) do
+
+  create_table "members", force: :cascade do |t|
+    t.integer "microcosm_id"
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["microcosm_id"], name: "index_members_on_microcosm_id"
+    t.index ["user_id"], name: "index_members_on_user_id"
+  end
 
   create_table "microcosms", force: :cascade do |t|
     t.string "name", null: false
@@ -19,6 +28,12 @@ ActiveRecord::Schema.define(version: 20180102024414) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["key"], name: "index_microcosms_on_key", unique: true
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end
