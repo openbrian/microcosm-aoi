@@ -1,5 +1,5 @@
 
-Given("There is a microcosm") do
+Given("there is a microcosm") do
   @the_microcosm = Microcosm.create!(:name => "MappingDC", :key => "mappingdc", :members_num => 353)
 end
 

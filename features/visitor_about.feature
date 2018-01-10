@@ -4,7 +4,7 @@ Feature: Learn about the Microcosm
   I want to read their webpage
 
 Background:
-  Given There is a microcosm
+  Given there is a microcosm
   And the microcosm has a member "Brian DeRocher"
   And the microcosm has an organizer "Steven Johnson"
   And I am on the microcosm page
