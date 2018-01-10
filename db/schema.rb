@@ -10,11 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180108042702) do
+ActiveRecord::Schema.define(version: 20180110035509) do
 
   create_table "members", force: :cascade do |t|
-    t.integer "microcosm_id"
-    t.integer "user_id"
+    t.integer "microcosm_id", null: false
+    t.integer "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["microcosm_id"], name: "index_members_on_microcosm_id"
@@ -28,6 +28,15 @@ ActiveRecord::Schema.define(version: 20180108042702) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["key"], name: "index_microcosms_on_key", unique: true
+  end
+
+  create_table "organizers", force: :cascade do |t|
+    t.integer "microcosm_id", null: false
+    t.integer "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["microcosm_id"], name: "index_organizers_on_microcosm_id"
+    t.index ["user_id"], name: "index_organizers_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|

@@ -18,6 +18,17 @@
 <%= link_to 'Edit', edit_microcosm_path(@microcosm) %> |
 <%= link_to 'Back', microcosms_path %>
 
+<div id='Organizers'>
+  <h2>Organizers</h2>
+  <div class='organizers'>
+    <% @microcosm.organizers.each do |organizer| %>
+      <tr>
+        <td><%= organizer.user.name %></td>
+      </tr>
+    <% end %>
+  </div>
+</div>
+
 <div id='Members'>
   <h2>Members</h2>
   <div class='members'>

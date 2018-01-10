@@ -6,6 +6,7 @@ Feature: Learn about the Microcosm
 Background:
   Given There is a microcosm
   And the microcosm has a member "Brian DeRocher"
+  And the microcosm has an organizer "Steven Johnson"
   And I am on the microcosm page
 
 Scenario: Describe the microcosm
@@ -14,3 +15,6 @@ Scenario: Describe the microcosm
 
 Scenario: Show the list of users
   Then I should see "Brian DeRocher" in the list of members
+
+Scenario: Show the list of organizers
+  Then I should see the "Steven Johnson" in this list of organizers of the microcosm

@@ -1,6 +1,6 @@
 
 Given("There is a microcosm") do
-  Microcosm.create!(:name => "MappingDC", :key => "mappingdc", :members_num => 353)
+  @the_microcosm = Microcosm.create!(:name => "MappingDC", :key => "mappingdc", :members_num => 353)
 end
 
 Given("I am on the microcosm page") do
@@ -17,6 +17,11 @@ Given("the microcosm has a member {string}") do |name|
   click_button
 end
 
+Given("the microcosm has an organizer {string}") do |name|
+  @the_microcosm.organizers.create(user: User.create(name: name))
+end
+
+
 Then("I should see the microcosm name") do
   expect(page).to have_content('MappingDC')
 end
@@ -28,6 +33,13 @@ end
 Then("I should see {string} in the list of members") do |name|
   within '#Members' do
     expect(page).to have_content('Members')
+    expect(page).to have_content(name)
+  end
+end
+
+Then("I should see the {string} in this list of organizers of the microcosm") do |name|
+  within '#Organizers' do
+    expect(page).to have_content('Organizers')
     expect(page).to have_content(name)
   end
 end
