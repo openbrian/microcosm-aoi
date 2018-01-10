@@ -8,13 +8,14 @@ Given("I am on the microcosm page") do
 end
 
 Given("the microcosm has a member {string}") do |name|
-  visit "/users/new"
-  fill_in "Name", with: "Brian DeRocher"
-  click_button
-  visit "/members/new"
-  fill_in "Microcosm", with: '1'
-  fill_in "User", with: '1'
-  click_button
+  @the_microcosm.members.create(user: User.create(name: name))
+# visit "/users/new"
+# fill_in "Name", with: "Brian DeRocher"
+# click_button
+# visit "/members/new"
+# fill_in "Microcosm", with: '1'
+# fill_in "User", with: '1'
+# click_button
 end
 
 Given("the microcosm has an organizer {string}") do |name|
