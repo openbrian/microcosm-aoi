@@ -1,10 +1,10 @@
 
-Given("there is a microcosm") do
-  @the_microcosm = Microcosm.create!(:name => "MappingDC", :key => "mappingdc", :members_num => 353)
+Given("there is a microcosm {string}") do |name|
+  @the_microcosm = Microcosm.create!(:name => name, :key => name.downcase, :members_num => 353)
 end
 
-Given("I am on the microcosm page") do
-  visit "/microcosms/mappingdc"
+Given("I am on the microcosm {string} page") do |name|
+  visit "/microcosms/" + name.downcase
 end
 
 Given("the microcosm has a member {string}") do |name|
@@ -23,8 +23,8 @@ Given("the microcosm has an organizer {string}") do |name|
 end
 
 
-Then("I should see the microcosm name") do
-  expect(page).to have_content('MappingDC')
+Then("I should see the microcosm {string} name") do |name|
+  expect(page).to have_content(name)
 end
 
 Then("I should see the microcosm number of members") do
