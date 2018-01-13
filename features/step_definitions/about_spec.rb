@@ -22,6 +22,10 @@ Given("the microcosm has an organizer {string}") do |name|
   @the_microcosm.organizers.create(user: User.create(name: name))
 end
 
+Given("the microcosm has a {string} event") do |title|
+  @the_microcosm.events.create(title: title)
+end
+
 
 Then("I should see the microcosm {string} name") do |name|
   expect(page).to have_content(name)
@@ -42,5 +46,12 @@ Then("I should see the {string} in this list of organizers of the microcosm") do
   within '#Organizers' do
     expect(page).to have_content('Organizers')
     expect(page).to have_content(name)
+  end
+end
+
+Then("I should see the {string} event in the list of events") do |title|
+  within '#Events' do
+    expect(page).to have_content('Eventss')
+    expect(page).to have_content(title)
   end
 end

@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  moment: 2018-01-13 01:07:20
+  location: MyString
+  description: MyText
+  microcosm_id: 1
+
+two:
+  title: MyString
+  moment: 2018-01-13 01:07:20
+  location: MyString
+  description: MyText
+  microcosm_id: 1

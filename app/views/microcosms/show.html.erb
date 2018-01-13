@@ -29,6 +29,17 @@
   </div>
 </div>
 
+<div id='Events'>
+  <h2>Eventss</h2>
+  <div class='events'>
+    <% @microcosm.events.each do |event| %>
+      <tr>
+        <td><%= event.title %></td>
+      </tr>
+    <% end %>
+  </div>
+</div>
+
 <div id='Members'>
   <h2>Members</h2>
   <div class='members'>

@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :events
   resources :organizers
   root :to => 'microcosms#index'
   # This is needed because "new" matches the regex for microcosm names.
