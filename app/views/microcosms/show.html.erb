@@ -22,9 +22,9 @@
   <h2>Organizers</h2>
   <div class='organizers'>
     <% @microcosm.organizers.each do |organizer| %>
-      <tr>
-        <td><%= organizer.user.name %></td>
-      </tr>
+      <ul>
+        <li><%= organizer.user.name %></li>
+      </ul>
     <% end %>
   </div>
 </div>
@@ -33,9 +33,9 @@
   <h2>Events</h2>
   <div class='events'>
     <% @microcosm.events.each do |event| %>
-      <tr>
-        <td><%= event.title %></td>
-      </tr>
+      <ul>
+        <li><%= event.title %></li>
+      </ul>
     <% end %>
   </div>
 </div>
@@ -44,9 +44,9 @@
   <h2>Members</h2>
   <div class='members'>
     <% @microcosm.members.each do |member| %>
-      <tr>
-        <td><%= member.user.name %></td>
-      </tr>
+      <ul>
+        <li><%= member.user.name %></li>
+      </ul>
     <% end %>
   </div>
 </div>
