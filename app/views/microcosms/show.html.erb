@@ -1,9 +1,8 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
+<h1>
   <%= @microcosm.name %>
-</p>
+</h1>
 
 <p>
   <strong>Key:</strong>
@@ -11,7 +10,7 @@
 </p>
 
 <p>
-  <strong>Members num:</strong>
+  <strong>Members:</strong>
   <%= @microcosm.members_num %>
 </p>
 
@@ -34,7 +33,7 @@
   <div class='events'>
     <% @microcosm.events.each do |event| %>
       <ul>
-        <li><%= event.title %></li>
+        <li><%= event.moment %> - <%= event.title %> - <%= event.location %></li>
       </ul>
     <% end %>
   </div>
