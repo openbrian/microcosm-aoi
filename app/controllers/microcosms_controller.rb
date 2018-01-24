@@ -1,6 +1,7 @@
 class MicrocosmsController < ApplicationController
   before_action :set_microcosm, only: [:show, :edit, :update, :destroy]
   before_action :set_microcosm_by_key, only: [:show_by_key]
+  before_action :authenticate, :except => [:index, :show, :show_by_key]  # TODO inherit
 
   # GET /microcosms
   # GET /microcosms.json

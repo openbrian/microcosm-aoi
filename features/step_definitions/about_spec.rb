@@ -51,7 +51,7 @@ end
 
 Then("I should see the {string} event in the list of events") do |title|
   within '#Events' do
-    expect(page).to have_content('Eventss')
+    expect(page).to have_content('Events')
     expect(page).to have_content(title)
   end
 end
