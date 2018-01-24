@@ -15,6 +15,7 @@ class EventsController < ApplicationController
   # GET /events/new
   def new
     @event = Event.new
+    @event.microcosm_id = params[:microcosm_id]
   end
 
   # GET /events/1/edit

@@ -15,6 +15,8 @@ class MembersController < ApplicationController
   # GET /members/new
   def new
     @member = Member.new
+    @member.microcosm_id = params[:microcosm_id]
+    @member.user_id = params[:user_id]
   end
 
   # GET /members/1/edit

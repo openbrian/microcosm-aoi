@@ -1,7 +1,18 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+Microcosm.create!([
+  {name: "MappingDC", key: "mdc", members_num: 1}
+])
+Event.create!([
+  {title: "Mappy Hour", moment: "2019-01-24 07:20:00", location: "Capitol City Brewing", description: "Join us for discussions of mapping.", microcosm_id: 1}
+])
+User.create!([
+  {name: "Brian DeRocher", provider: nil, uid: nil},
+  {name: "Steven Johnson", provider: nil, uid: nil},
+  {name: "Andrew Wiseman", provider: nil, uid: nil}
+])
+Member.create!([
+  {microcosm_id: 1, user_id: 2},
+  {microcosm_id: 1, user_id: 3}
+])
+Organizer.create!([
+  {microcosm_id: 1, user_id: 1}
+])

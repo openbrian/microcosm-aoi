@@ -15,6 +15,8 @@ class OrganizersController < ApplicationController
   # GET /organizers/new
   def new
     @organizer = Organizer.new
+    @organizer.microcosm_id = params[:microcosm_id]
+    @organizer.user_id = params[:user_id]
   end
 
   # GET /organizers/1/edit
