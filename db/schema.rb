@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180119040946) do
+ActiveRecord::Schema.define(version: 20180124075700) do
 
   create_table "events", force: :cascade do |t|
     t.string "title"
@@ -37,6 +37,8 @@ ActiveRecord::Schema.define(version: 20180119040946) do
     t.integer "members_num", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "facebook"
+    t.string "twitter"
     t.index ["key"], name: "index_microcosms_on_key", unique: true
   end
 

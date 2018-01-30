@@ -8,6 +8,8 @@ Background:
   And the microcosm has a member "Brian DeRocher"
   And the microcosm has an organizer "Steven Johnson"
   And the microcosm has a "Bus Routes" event
+  And the microcosm has facebook page "mappingdc"
+  And the microcosm has twitter account "mappingdc"
   And I am on the microcosm "MappingDC" page
 
 Scenario: Describe the microcosm
@@ -22,3 +24,9 @@ Scenario: Show the list of organizers
 
 Scenario: Show the list of events
   Then I should see the "Bus Routes" event in the list of events
+
+Scenario: Show the facebook link
+  Then I should see the "Facebook" link to "https://facebook.com/groups/mappingdc"
+
+Scenario: Show the twitter link
+  Then I should see the "Twitter" link to "https://twitter.com/mappingdc"

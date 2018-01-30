@@ -3,10 +3,6 @@ Given("there is a microcosm {string}") do |name|
   @the_microcosm = Microcosm.create!(:name => name, :key => name.downcase, :members_num => 353)
 end
 
-Given("I am on the microcosm {string} page") do |name|
-  visit "/microcosms/" + name.downcase
-end
-
 Given("the microcosm has a member {string}") do |name|
   @the_microcosm.members.create(user: User.create(name: name))
 # visit "/users/new"
@@ -26,6 +22,20 @@ Given("the microcosm has a {string} event") do |title|
   @the_microcosm.events.create(title: title)
 end
 
+Given("the microcosm has facebook page {string}") do |fb|
+  @the_microcosm.facebook = fb
+  @the_microcosm.save
+end
+
+Given("the microcosm has twitter account {string}") do |acct|
+  @the_microcosm.twitter = acct
+  @the_microcosm.save
+end
+
+
+Given("I am on the microcosm {string} page") do |name|
+  visit "/microcosms/" + name.downcase
+end
 
 Then("I should see the microcosm {string} name") do |name|
   expect(page).to have_content(name)
@@ -54,4 +64,8 @@ Then("I should see the {string} event in the list of events") do |title|
     expect(page).to have_content('Events')
     expect(page).to have_content(title)
   end
+end
+
+Then("I should see the {string} link to {string}") do |title, href|
+  expect(page).to have_link(title, :href => href)
 end

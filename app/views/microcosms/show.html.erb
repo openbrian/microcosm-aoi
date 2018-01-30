@@ -12,6 +12,14 @@
   <strong>Members:</strong> <%= @microcosm.members_num %>
 </p>
 
+<p>
+  <strong>Facebook:</strong> <a href="https://facebook.com/groups/<%=@microcosm.facebook%>">Facebook</a>
+</p>
+
+<p>
+  <strong>Twitter:</strong> <a href="https://twitter.com/<%=@microcosm.twitter%>">Twitter</a>
+</p>
+
 <%= link_to 'Edit', edit_microcosm_path(@microcosm) %> |
 <%= link_to 'Back', microcosms_path %>
 
