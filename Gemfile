@@ -41,6 +41,8 @@ group :development, :test do
   gem 'cucumber-rails', :require => false
   # database_cleaner is not required, but highly recommended
   gem 'database_cleaner'
+  gem 'motion-markdown-it'
+  gem 'motion-markdown-it-plugins'
   gem 'rspec-expectations'
   gem 'seed_dump'
   gem 'selenium-webdriver'
