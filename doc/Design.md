@@ -35,6 +35,8 @@ Not a single local group because
 - [x] See description of the microcosm
 - [x] See the members of the microcosm
 - [x] See links to facebook and twitter
+- [ ] See a map of the area
+- [ ] See links to members OSM wiki, OSM help, OSM Forum, GitHub, Mapillary, HOT OSM, and Twitter accounts if they exist.
 - [ ] See what the microcosm is working on
 - [ ] See what's new in the microcosm: editing activity, project activity
 - [ ] See feed from twitter
