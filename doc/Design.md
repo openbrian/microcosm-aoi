@@ -137,6 +137,10 @@ Not a single local group because
 
 # Use Cases
 
+## List reviews in the area
+
+Some people want their changes reviewed.  Provide a list of these for the AOI.
+
 ## An organizer organizes a street survey
 
 Assume: microcosm exists and has many users, event details have been selected
