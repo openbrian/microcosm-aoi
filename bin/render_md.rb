@@ -26,9 +26,8 @@ blockquote
   }
 section
   {
-  border: 1px solid #CCC;
-  padding: 1em;
-  margin: 1em;
+  padding-left: 1em;
+  margin-left: 1em;
   }
 
 /*
