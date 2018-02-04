@@ -15,6 +15,7 @@ gem 'coffee-rails', '~> 4.2'
 gem 'dotenv-rails'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
+gem 'leaflet-rails'
 # Use Puma as the app server
 gem 'omniauth-osm'
 gem 'puma', '~> 3.7'

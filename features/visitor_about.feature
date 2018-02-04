@@ -30,3 +30,6 @@ Scenario: Show the facebook link
 
 Scenario: Show the twitter link
   Then I should see the "Twitter" link to "https://twitter.com/mappingdc"
+
+Scenario: Show a map
+  Then I should see a map

@@ -69,3 +69,7 @@ end
 Then("I should see the {string} link to {string}") do |title, href|
   expect(page).to have_link(title, :href => href)
 end
+
+Then("I should see a map") do
+  expect(page).to have_css('#Map')
+end
