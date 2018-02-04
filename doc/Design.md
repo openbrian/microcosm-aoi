@@ -155,6 +155,8 @@ Steps:
 
 At an event there may not be time for surveyors to enter all their data.  They can take pictures of their notes and upload it to the microcosm for other people to map later.  The notes are entered into a queue of tasks for others to assign to themselves.
 
+Build native apps for iOS and Android to use the camera and upload them to the server.
+
 # Use
 
 * Feature flags - pda/flip, fetlife/rollout
