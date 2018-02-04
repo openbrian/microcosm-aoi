@@ -1,6 +1,5 @@
 require 'motion-markdown-it'
 require 'motion-markdown-it-plugins'
-require_relative '../lib/motion-markdown-it-header-sections.rb'
 
 src = open('doc/Design.md').read;
 
@@ -27,8 +26,9 @@ blockquote
   }
 section
   {
-  border: 1px solid grey;
-  margin: 4px;
+  border: 1px solid #CCC;
+  padding: 1em;
+  margin: 1em;
   }
 
 /*

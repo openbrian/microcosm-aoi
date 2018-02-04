@@ -42,7 +42,7 @@ group :development, :test do
   # database_cleaner is not required, but highly recommended
   gem 'database_cleaner'
   gem 'motion-markdown-it'
-  gem 'motion-markdown-it-plugins'
+  gem 'motion-markdown-it-plugins', :git => 'https://github.com/openbrian/motion-markdown-it-plugins', :branch => "add-header-sections"
   gem 'rspec-expectations'
   gem 'seed_dump'
   gem 'selenium-webdriver'
