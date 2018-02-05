@@ -1,6 +1,5 @@
-
 Given("there is a microcosm {string}") do |name|
-  @the_microcosm = Microcosm.create!(:name => name, :key => name.downcase, :members_num => 353)
+  @the_microcosm = Microcosm.create!(:name => name, :key => name.downcase, :members_num => 353, lat: 38.9, lon:-77.03)
 end
 
 Given("the microcosm has a member {string}") do |name|
