@@ -1,3 +1,10 @@
+require 'capybara/poltergeist'
+Capybara.register_driver :poltergeist do |app|
+  Capybara::Poltergeist::Driver.new(app, :inspector => true)
+end
+Capybara.javascript_driver = :poltergeist
+
+
 Given("there is a microcosm {string}") do |name|
   @the_microcosm = Microcosm.create!(:name => name, :key => name.downcase, :members_num => 353, lat: 38.9, lon:-77.03)
 end
@@ -69,6 +76,11 @@ Then("I should see the {string} link to {string}") do |title, href|
   expect(page).to have_link(title, :href => href)
 end
 
-Then("I should see a map") do
+Then("I should see a map of the microcosm AOI") do
   expect(page).to have_css('#Map')
+# expect(page).to have_css('.leaflet-container')
+  coords = page.evaluate_script("function(){ setTimeout( function() { return window.map.getCenter(); }, 5000 ); }()")
+  print 'coords'
+  print coords
+# Capybara.use_default_driver
 end

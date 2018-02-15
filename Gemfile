@@ -44,6 +44,7 @@ group :development, :test do
   gem 'database_cleaner'
   gem 'motion-markdown-it'
   gem 'motion-markdown-it-plugins'
+  gem 'poltergeist'
   gem 'rspec-expectations'
   gem 'seed_dump'
   gem 'selenium-webdriver'

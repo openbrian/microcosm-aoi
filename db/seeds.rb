@@ -1,5 +1,5 @@
 Microcosm.create!([
-  {name: "MappingDC", key: "mdc", members_num: 1, facebook: "mappingdc", twitter: "mappingdc"}
+  {name: "MappingDC", key: "mdc", members_num: 1, facebook: "mappingdc", twitter: "mappingdc", lat: 38.9, lon:-77.03}
 ])
 Event.create!([
   {title: "Mappy Hour", moment: "2019-01-24 07:20:00", location: "Capitol City Brewing", description: "Join us for discussions of mapping.", microcosm_id: 1}
