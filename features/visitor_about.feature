@@ -31,5 +31,6 @@ Scenario: Show the facebook link
 Scenario: Show the twitter link
   Then I should see the "Twitter" link to "https://twitter.com/mappingdc"
 
+@javascript
 Scenario: Show a map
-  Then I should see a map of the microcosm AOI
+  Then I should see a map of the microcosm centered at their AOI

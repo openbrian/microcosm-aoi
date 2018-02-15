@@ -2,8 +2,8 @@
 
 <%= map(:container_id => 'Map',
   :center => {
-  :latlng => [51.52238797921441, -0.08366235665359283],
-  :zoom => 18
+  :latlng => [@microcosm.lat, @microcosm.lon],
+  :zoom => 11
 }) %>
 <h1>
   <%= @microcosm.name %>

@@ -76,11 +76,10 @@ Then("I should see the {string} link to {string}") do |title, href|
   expect(page).to have_link(title, :href => href)
 end
 
-Then("I should see a map of the microcosm AOI") do
+Then("I should see a map of the microcosm centered at their AOI") do
   expect(page).to have_css('#Map')
-# expect(page).to have_css('.leaflet-container')
-  coords = page.evaluate_script("function(){ setTimeout( function() { return window.map.getCenter(); }, 5000 ); }()")
-  print 'coords'
-  print coords
-# Capybara.use_default_driver
+  expect(page).to have_css('.leaflet-container')
+  coords = page.evaluate_script("function(){ return window.map.getCenter(); }()")
+  expect(coords['lat']).to eq(@the_microcosm.lat)
+  expect(coords['lng']).to eq(@the_microcosm.lon)
 end
