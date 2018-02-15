@@ -1,5 +1,10 @@
 <p id="notice"><%= notice %></p>
 
+<%= map(:container_id => 'Map',
+  :center => {
+  :latlng => [51.52238797921441, -0.08366235665359283],
+  :zoom => 18
+}) %>
 <h1>
   <%= @microcosm.name %>
 </h1>
@@ -58,8 +63,3 @@
   </div>
 </div>
 <%= link_to 'New', new_member_path(microcosm_id: 1) %>
-<%= map(:container_id => 'Map',
-  :center => {
-  :latlng => [51.52238797921441, -0.08366235665359283],
-  :zoom => 18
-}) %>

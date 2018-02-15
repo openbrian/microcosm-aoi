@@ -14,4 +14,9 @@
  *= require_self
  *= require leaflet
  */
-#Map { height: 180px; }
+#Map
+  {
+  height: 600px;
+  width: 600px;
+  float: right;
+  }
