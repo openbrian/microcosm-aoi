@@ -1,7 +1,7 @@
 require 'motion-markdown-it'
 require 'motion-markdown-it-plugins'
 
-src = open('doc/Design.md').read;
+src = STDIN.read;
 
 parser = MarkdownIt::Parser.new(:commonmark, { html: false })
   .use(MotionMarkdownItPlugins::CheckboxReplace, {})
