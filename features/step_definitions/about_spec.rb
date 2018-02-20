@@ -79,7 +79,7 @@ end
 Then("I should see a map of the microcosm centered at their AOI") do
   expect(page).to have_css('#Map')
   expect(page).to have_css('.leaflet-container')
-  coords = page.evaluate_script("function(){ return window.map.getCenter(); }()")
+  coords = page.evaluate_script("window.map.getCenter()")
   expect(coords['lat']).to eq(@the_microcosm.lat)
   expect(coords['lng']).to eq(@the_microcosm.lon)
 end
