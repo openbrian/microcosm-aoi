@@ -58,6 +58,7 @@ Not a single local group because
 
 ### About the member
 
+- [ ] See Notes on the map that need resolution
 - [ ] See their profile
 - [ ] See their upcoming events
 - [ ] See their past events
