@@ -9,8 +9,13 @@ Given("there is a microcosm {string}") do |name|
   @the_microcosm = Microcosm.create!(:name => name, :key => name.downcase, :members_num => 353, lat: 38.9, lon:-77.03)
 end
 
+
 Given("the microcosm has a member {string}") do |name|
   @the_microcosm.members.create(user: User.create(name: name))
+end
+
+Given("the microcosm has a member {string} with uid {string} at provider {string}") do |name, uid, provider|
+  @the_microcosm.members.create(user: User.create(name: name, uid: uid, provider: provider))
 # visit "/users/new"
 # fill_in "Name", with: "Brian DeRocher"
 # click_button
@@ -42,6 +47,20 @@ end
 Given("I am on the microcosm {string} page") do |name|
   visit "/microcosms/" + name.downcase
 end
+
+Given("I am on the home page") do
+  visit "/"
+end
+
+
+Given("I sign in as {string}") do |name|
+  @the_user = User.find_by(name: name)
+  OmniAuth.config.add_mock(:osm, {:uid => @the_user.uid, :provider => @the_user.provider, :info => {:name => name}})
+  visit "/"
+  click_link "Sign in"
+  click_link "Sign in with OSM"
+end
+
 
 Then("I should see the microcosm {string} name") do |name|
   expect(page).to have_content(name)
@@ -82,4 +101,8 @@ Then("I should see a map of the microcosm centered at their AOI") do
   coords = page.evaluate_script("window.map.getCenter()")
   expect(coords['lat']).to eq(@the_microcosm.lat)
   expect(coords['lng']).to eq(@the_microcosm.lon)
+end
+
+Then("I should see {string}") do |msg|
+  expect(page).to have_content(msg)
 end
