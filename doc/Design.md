@@ -55,6 +55,7 @@ Not a single local group because
 ### About the microcosm
 
 - [ ] See details about other members
+- [ ] See mayors of neighborhoods
 
 ### About the member
 
