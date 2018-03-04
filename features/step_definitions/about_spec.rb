@@ -106,3 +106,13 @@ end
 Then("I should see {string}") do |msg|
   expect(page).to have_content(msg)
 end
+
+
+Then("I should not see the list of changesets to be reviewed.") do
+  expect(page).not_to have_selector('h2#Changesets')
+end
+
+
+Then("I should see changeset {string} in the list of changesets") do |cid|
+  expect(find('#Changesets')).to have_content(cid)
+end

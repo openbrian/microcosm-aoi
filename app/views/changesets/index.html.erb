@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Changesets</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Created at</th>
+      <th>Min lat</th>
+      <th>Max lat</th>
+      <th>Min lon</th>
+      <th>Max lon</th>
+      <th>Closed at</th>
+      <th>Num changes</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @changesets.each do |changeset| %>
+      <tr>
+        <td><%= changeset.user_id %></td>
+        <td><%= changeset.created_at %></td>
+        <td><%= changeset.min_lat %></td>
+        <td><%= changeset.max_lat %></td>
+        <td><%= changeset.min_lon %></td>
+        <td><%= changeset.max_lon %></td>
+        <td><%= changeset.closed_at %></td>
+        <td><%= changeset.num_changes %></td>
+        <td><%= link_to 'Show', changeset %></td>
+        <td><%= link_to 'Edit', edit_changeset_path(changeset) %></td>
+        <td><%= link_to 'Destroy', changeset, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Changeset', new_changeset_path %>

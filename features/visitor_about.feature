@@ -34,3 +34,7 @@ Scenario: Show the twitter link
 @javascript
 Scenario: Show a map
   Then I should see a map of the microcosm centered at their AOI
+
+
+Scenario: Not see the changesets to be reviewed
+  Then I should not see the list of changesets to be reviewed.

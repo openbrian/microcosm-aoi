@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @changeset.user_id %>
+</p>
+
+<p>
+  <strong>Created at:</strong>
+  <%= @changeset.created_at %>
+</p>
+
+<p>
+  <strong>Min lat:</strong>
+  <%= @changeset.min_lat %>
+</p>
+
+<p>
+  <strong>Max lat:</strong>
+  <%= @changeset.max_lat %>
+</p>
+
+<p>
+  <strong>Min lon:</strong>
+  <%= @changeset.min_lon %>
+</p>
+
+<p>
+  <strong>Max lon:</strong>
+  <%= @changeset.max_lon %>
+</p>
+
+<p>
+  <strong>Closed at:</strong>
+  <%= @changeset.closed_at %>
+</p>
+
+<p>
+  <strong>Num changes:</strong>
+  <%= @changeset.num_changes %>
+</p>
+
+<%= link_to 'Edit', edit_changeset_path(@changeset) %> |
+<%= link_to 'Back', changesets_path %>

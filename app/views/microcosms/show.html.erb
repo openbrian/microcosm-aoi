@@ -63,3 +63,18 @@
   </div>
 </div>
 <%= link_to 'New', new_member_path(microcosm_id: 1) %>
+
+<% if current_user %>
+<div id='Changesets'>
+  <h2>
+Changesets
+  </h2>
+  <div class='changesets'>
+    <% @microcosm.changesets().each do |changeset| %>
+      <ul>
+        <li><%= changeset.id %> - <%= changeset.closed_at %> - <%= changeset.user_id %></li>
+      </ul>
+    <% end %>
+  </div>
+</div>
+<% end %>

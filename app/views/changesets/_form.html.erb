@@ -1,0 +1,57 @@
+<%= form_with(model: changeset, local: true) do |form| %>
+  <% if changeset.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(changeset.errors.count, "error") %> prohibited this changeset from being saved:</h2>
+
+      <ul>
+      <% changeset.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :user_id %>
+    <%= form.text_field :user_id, id: :changeset_user_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :created_at %>
+    <%= form.datetime_select :created_at, id: :changeset_created_at %>
+  </div>
+
+  <div class="field">
+    <%= form.label :min_lat %>
+    <%= form.number_field :min_lat, id: :changeset_min_lat %>
+  </div>
+
+  <div class="field">
+    <%= form.label :max_lat %>
+    <%= form.number_field :max_lat, id: :changeset_max_lat %>
+  </div>
+
+  <div class="field">
+    <%= form.label :min_lon %>
+    <%= form.number_field :min_lon, id: :changeset_min_lon %>
+  </div>
+
+  <div class="field">
+    <%= form.label :max_lon %>
+    <%= form.number_field :max_lon, id: :changeset_max_lon %>
+  </div>
+
+  <div class="field">
+    <%= form.label :closed_at %>
+    <%= form.datetime_select :closed_at, id: :changeset_closed_at %>
+  </div>
+
+  <div class="field">
+    <%= form.label :num_changes %>
+    <%= form.number_field :num_changes, id: :changeset_num_changes %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

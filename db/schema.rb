@@ -10,7 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180204230514) do
+ActiveRecord::Schema.define(version: 20180222193242) do
+
+  create_table "changesets", force: :cascade do |t|
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.integer "min_lat"
+    t.integer "max_lat"
+    t.integer "min_lon"
+    t.integer "max_lon"
+    t.datetime "closed_at", null: false
+    t.integer "num_changes", default: 0, null: false
+  end
 
   create_table "events", force: :cascade do |t|
     t.string "title"
