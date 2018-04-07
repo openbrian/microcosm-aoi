@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180204230514) do
+ActiveRecord::Schema.define(version: 20180407035447) do
 
   create_table "events", force: :cascade do |t|
     t.string "title"
@@ -41,6 +41,10 @@ ActiveRecord::Schema.define(version: 20180204230514) do
     t.string "twitter"
     t.decimal "lat", null: false
     t.decimal "lon", null: false
+    t.integer "min_lat", null: false
+    t.integer "max_lat", null: false
+    t.integer "min_lon", null: false
+    t.integer "max_lon", null: false
     t.index ["key"], name: "index_microcosms_on_key", unique: true
   end
 
