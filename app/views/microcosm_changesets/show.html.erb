@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Microcosm:</strong>
+  <%= @microcosm_changeset.microcosm_id %>
+</p>
+
+<p>
+  <strong>Changeset:</strong>
+  <%= @microcosm_changeset.changeset_id %>
+</p>
+
+<p>
+  <strong>Review num:</strong>
+  <%= @microcosm_changeset.review_num %>
+</p>
+
+<%= link_to 'Edit', edit_microcosm_changeset_path(@microcosm_changeset) %> |
+<%= link_to 'Back', microcosm_changesets_path %>

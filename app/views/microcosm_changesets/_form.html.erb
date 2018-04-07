@@ -1,0 +1,32 @@
+<%= form_with(model: microcosm_changeset, local: true) do |form| %>
+  <% if microcosm_changeset.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(microcosm_changeset.errors.count, "error") %> prohibited this microcosm_changeset from being saved:</h2>
+
+      <ul>
+      <% microcosm_changeset.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :microcosm_id %>
+    <%= form.number_field :microcosm_id, id: :microcosm_changeset_microcosm_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :changeset_id %>
+    <%= form.text_field :changeset_id, id: :microcosm_changeset_changeset_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :review_num %>
+    <%= form.text_field :review_num, id: :microcosm_changeset_review_num %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

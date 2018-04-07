@@ -11,6 +11,8 @@ Rails.application.routes.draw do
   get 'microcosms/new', to: 'microcosms#new'
   get 'microcosms/:key', to: 'microcosms#show_by_key', constraints: { key: /[a-zA-Z]{1,32}/ }
   resources :microcosms
+  post '/microcosm_changesets/discover', to: 'microcosm_changesets#discover'
+  resources :microcosm_changesets
   resources :members
   resources :users
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

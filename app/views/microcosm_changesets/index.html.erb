@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Microcosm Changesets</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Microcosm</th>
+      <th>Changeset</th>
+      <th>Review num</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @microcosm_changesets.each do |microcosm_changeset| %>
+      <tr>
+        <td><%= microcosm_changeset.microcosm_id %></td>
+        <td><%= microcosm_changeset.changeset_id %></td>
+        <td><%= microcosm_changeset.review_num %></td>
+        <td><%= link_to 'Show', microcosm_changeset %></td>
+        <td><%= link_to 'Edit', edit_microcosm_changeset_path(microcosm_changeset) %></td>
+        <td><%= link_to 'Destroy', microcosm_changeset, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Microcosm Changeset', new_microcosm_changeset_path %>
