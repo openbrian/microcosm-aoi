@@ -2,6 +2,7 @@ class MicrocosmsController < ApplicationController
   before_action :set_microcosm, only: [:show, :edit, :update, :destroy]
   before_action :set_microcosm_by_key, only: [:show_by_key]
   before_action :authenticate, :except => [:index, :show, :show_by_key]  # TODO inherit
+  helper_method :current_changesets
 
   # GET /microcosms
   # GET /microcosms.json
@@ -68,6 +69,28 @@ class MicrocosmsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+
+  def current_changesets
+    @current_changesets = MicrocosmChangeset.where(review_num: 0).last(10)
+  end
+
+
+  def discover_changesets
+    @microcosm = Microcosm.find(params[:microcosm_id])
+    # Get the greatest known changeset_id for this microcosm.
+    max_id = MicrocosmChangeset.where(microcosm_id: @microcosm.id).maximum('changeset_id') || 0
+    count_default = 10;
+    count_max = 1000
+    limit = [params.fetch(:count, count_default).to_i, count_max].min
+    Osm::Changeset.where("? < max_lon and min_lon < ? and ? < max_lat and min_lat < ?", @microcosm.min_lon, @microcosm.max_lon, @microcosm.min_lat, @microcosm.max_lat).where("? < id", max_id).limit(limit).each do |changeset|
+      # TODO: Use default value for review_num.
+      mc = MicrocosmChangeset.new(microcosm_id: @microcosm.id, changeset_id: changeset.id, review_num: 0)
+      mc.save(validate: false)
+    end
+    render action: "show"
+  end
+
 
   private
     # Use callbacks to share common setup or constraints between actions.

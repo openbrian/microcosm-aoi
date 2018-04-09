@@ -61,16 +61,6 @@ class MicrocosmChangesetsController < ApplicationController
     end
   end
 
-  def discover
-    mid = params[:microcosm_id]
-    microcosm = Microcosm.find(mid)
-    Osm::Changeset.where("? * 10^7 < max_lon and min_lon < ? * 10^7 and ? * 10^7 < max_lat and min_lat < ? * 10^7", microcosm.min_lon, microcosm.max_lon, microcosm.min_lat, microcosm.max_lat).limit(params[:count]).each do |changeset|
-      mc = MicrocosmChangeset.new(microcosm_id: mid, changeset_id: changeset.id, review_num: 0 )
-      mc.save
-    end
-    render action: "index"
-  end
-
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_microcosm_changeset

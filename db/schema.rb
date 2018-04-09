@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180407043725) do
+ActiveRecord::Schema.define(version: 20180408200207) do
 
   create_table "events", force: :cascade do |t|
     t.string "title"
@@ -32,11 +32,13 @@ ActiveRecord::Schema.define(version: 20180407043725) do
   end
 
   create_table "microcosm_changesets", force: :cascade do |t|
-    t.integer "microcosm_id", null: false
-    t.bigint "changeset_id", null: false
-    t.integer "review_num", null: false
+    t.integer "microcosm_id"
+    t.bigint "changeset_id"
+    t.integer "review_num"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["changeset_id"], name: "index_microcosm_changesets_on_changeset_id"
+    t.index ["microcosm_id"], name: "index_microcosm_changesets_on_microcosm_id"
   end
 
   create_table "microcosms", force: :cascade do |t|
