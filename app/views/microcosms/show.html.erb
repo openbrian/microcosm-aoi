@@ -67,9 +67,9 @@
 <div id='Changesets'>
   <h2>Changesets</h2>
   <div class='changesets'>
-    <% current_changesets.each do |changeset| %>
+    <% current_changesets.each do |mc| %>
       <ul>
-        <li><a href="/microcosm_changesets/<%= changeset.id %>"><%= changeset.changeset_id %> - <%= changeset.changeset.closed_at %> - <%= changeset.changeset.user_id %></a></li>
+        <li><a href="/microcosm_changesets/<%= mc.id %>"><%= mc.changeset_id %> - <%= mc.changeset.closed_at %> - <%= mc.changeset.user_id %></a></li>
       </ul>
     <% end %>
   </div>
