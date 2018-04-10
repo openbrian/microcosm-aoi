@@ -7,12 +7,22 @@
 
 <p>
   <strong>Changeset:</strong>
-  <%= @microcosm_changeset.changeset_id %>
+  <a href="https://openstreetmap.org/changeset/<%= @microcosm_changeset.changeset_id %>" target="_blank"><%= @microcosm_changeset.changeset_id %></a>
 </p>
 
 <p>
   <strong>Review num:</strong>
   <%= @microcosm_changeset.review_num %>
+</p>
+
+<p>
+  <strong>User id:</strong>
+  <%= @microcosm_changeset.user_id %>
+</p>
+
+<p>
+  <strong>Editor id:</strong>
+  <%= @microcosm_changeset.editor_id %>
 </p>
 
 <%= link_to 'Edit', edit_microcosm_changeset_path(@microcosm_changeset) %> |

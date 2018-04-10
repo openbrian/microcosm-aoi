@@ -16,6 +16,9 @@ Member.create!([
 Organizer.create!([
   {microcosm_id: 1, user_id: 1}
 ])
+Editor.create!([
+  {user_id: 791438, display_name: "OpenBrian"}
+])
 MicrocosmChangeset.create!([
-  {microcosm_id: 1, changeset_id: 56625888, review_num: 0}
+  {microcosm_id: 1, changeset_id: 56625888, user_id: 791438, editor_id: 1, review_num: 0}
 ])

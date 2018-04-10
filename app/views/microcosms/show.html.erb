@@ -69,9 +69,9 @@
   <div class='changesets'>
     <% current_changesets.each do |mc| %>
       <ul>
-        <li><a href="/microcosm_changesets/<%= mc.id %>"><%= mc.changeset_id %> - <%= mc.changeset.closed_at %> - <%= mc.changeset.user_id %></a></li>
+        <li><a href="/microcosm_changesets/<%= mc.id %>"><%= mc.changeset_id %> - <%= mc.changeset.closed_at %> - <%= mc.editor.display_name %></a></li>
       </ul>
     <% end %>
   </div>
 </div>
-<%= button_to 'Discover 100', microcosms_discover_changesets_path, params: {microcosm_id: @microcosm.id, count: 100} %>
+<%= button_to 'Discover 1000', microcosms_discover_changesets_path, params: {microcosm_id: @microcosm.id, count: 1000} %>
