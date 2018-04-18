@@ -16,10 +16,10 @@ development:
 osm:
   adapter: postgresql
   encoding: unicode
-  host: ten
-  database: delmarva
-  username: microcosm
-  password: kdfjisdfojwef
+  host: <%= ENV.fetch("PROD_DB_OSM_HOST") %>
+  database: <%= ENV.fetch("PROD_DB_OSM_NAME") %>
+  username: <%= ENV.fetch("PROD_DB_OSM_USERNAME") %>
+  password: <%= ENV.fetch("PROD_DB_OSM_PASSWORD") %>
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -30,7 +30,12 @@ test: &test
 
 production:
   <<: *default
-  database: db/production.sqlite3
+  adapter: postgresql
+  encoding: unicode
+  host: <%= ENV.fetch("PROD_DB_HOST") %>
+  database: <%= ENV.fetch("PROD_DB_NAME") %>
+  username: <%= ENV.fetch("PROD_DB_USERNAME") %>
+  password: <%= ENV.fetch("PROD_DB_PASSWORD") %>
 
 cucumber:
   <<: *test
