@@ -17,7 +17,7 @@ class MicrocosmsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create microcosm" do
     assert_difference('Microcosm.count') do
-      post microcosms_url, params: { microcosm: { key: @microcosm.key, members_num: @microcosm.members_num, name: @microcosm.name } }
+      post microcosms_url, params: { microcosm: { key: @microcosm.key, name: @microcosm.name } }
     end
 
     assert_redirected_to microcosm_url(Microcosm.last)
@@ -34,7 +34,7 @@ class MicrocosmsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update microcosm" do
-    patch microcosm_url(@microcosm), params: { microcosm: { key: @microcosm.key, members_num: @microcosm.members_num, name: @microcosm.name } }
+    patch microcosm_url(@microcosm), params: { microcosm: { key: @microcosm.key, name: @microcosm.name } }
     assert_redirected_to microcosm_url(@microcosm)
   end
 

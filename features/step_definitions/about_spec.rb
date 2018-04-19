@@ -7,13 +7,14 @@ Capybara.javascript_driver = :poltergeist
 # The lines like "The microcosm HAS..." are not behavior driven.
 
 Given("there is a microcosm {string}") do |name|
-  @the_microcosm = Microcosm.create!(:name => name, :key => name.downcase, :members_num => 353, lat: 38.9, lon:-77.03, min_lat: 38.516 * 10**7, max_lat: 39.472 * 10**7, min_lon: -77.671 * 10**7, max_lon: -76.349 * 10**7)
+  @the_microcosm = Microcosm.create!(:name => name, :key => name.downcase, :members_count => 0, lat: 38.9, lon:-77.03, min_lat: 38.516 * 10**7, max_lat: 39.472 * 10**7, min_lon: -77.671 * 10**7, max_lon: -76.349 * 10**7)
 end
 
 
 Given("the microcosm has a member {string}") do |name|
   @the_microcosm.members.create(user: User.create(name: name))
 end
+
 
 Given("the microcosm has a member {string} with uid {string} at provider {string}") do |name, uid, provider|
   @the_microcosm.members.create(user: User.create(name: name, uid: uid, provider: provider))
@@ -79,8 +80,8 @@ Then("I should see the microcosm {string} name") do |name|
   expect(page).to have_content(name)
 end
 
-Then("I should see the microcosm number of members") do
-  expect(page).to have_content('353')
+Then("I should see the microcosm has {string} members") do |count|
+  expect(page).to have_content(count)
 end
 
 Then("I should see {string} in the list of members") do |name|

@@ -3,9 +3,9 @@
 one:
   name: MyString
   key: MyString
-  members_num: 1
+  members_count: 0
 
 two:
   name: MyString
   key: MyString
-  members_num: 1
+  members_count: 0

@@ -115,6 +115,6 @@ class MicrocosmsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def microcosm_params
-      params.require(:microcosm).permit(:name, :key, :members_num)
+      params.require(:microcosm).permit(:name, :key)
     end
 end

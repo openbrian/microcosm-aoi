@@ -14,7 +14,7 @@ Background:
 
 Scenario: Describe the microcosm
   Then I should see the microcosm "MappingDC" name
-  And I should see the microcosm number of members
+  And I should see the microcosm has "1" members
 
 Scenario: Show the list of users
   Then I should see "Brian DeRocher" in the list of members
