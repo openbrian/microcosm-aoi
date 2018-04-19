@@ -25,6 +25,10 @@
   <strong>Twitter:</strong> <a href="https://twitter.com/<%=@microcosm.twitter%>">Twitter</a>
 </p>
 
+<p>
+  <%= link_to 'Changesets', changesets_of_microcosm_path(@microcosm) %>
+</p>
+
 <%= link_to 'Edit', edit_microcosm_path(@microcosm) %> |
 <%= link_to 'Back', microcosms_path %>
 
@@ -63,15 +67,3 @@
   </div>
 </div>
 <%= link_to 'New', new_member_path(microcosm_id: 1) %>
-
-<div id='Changesets'>
-  <h2>Changesets</h2>
-  <div class='changesets'>
-    <% current_changesets.each do |mc| %>
-      <ul>
-        <li><a href="/microcosm_changesets/<%= mc.id %>"><%= mc.changeset_id %> - <%= mc.changeset.closed_at %> - <%= mc.editor.display_name %></a></li>
-      </ul>
-    <% end %>
-  </div>
-</div>
-<%= button_to 'Discover 10,000', microcosms_discover_changesets_path, params: {microcosm_id: @microcosm.id, count: 10000} %>

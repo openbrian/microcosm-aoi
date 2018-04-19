@@ -1,0 +1,17 @@
+<p id="notice"><%= notice %></p>
+
+<h1>
+  <%= @microcosm.name %>
+</h1>
+
+<div id='Changesets'>
+  <h2>Changesets</h2>
+  <div class='changesets'>
+    <% current_changesets.each do |mc| %>
+      <ul>
+        <li><a href="/microcosm_changesets/<%= mc.id %>"><%= mc.changeset_id %> - <%= mc.changeset.closed_at %> - <%= mc.editor.display_name %></a></li>
+      </ul>
+    <% end %>
+  </div>
+</div>
+<%= button_to 'Discover 10,000', microcosms_discover_changesets_path, params: {microcosm_id: @microcosm.id, count: 10000} %>

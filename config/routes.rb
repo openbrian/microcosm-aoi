@@ -10,6 +10,8 @@ Rails.application.routes.draw do
   # This is needed because "new" matches the regex for microcosm names.
   get 'microcosms/new', to: 'microcosms#new'
   get 'microcosms/:key', to: 'microcosms#show_by_key', constraints: { key: /[a-zA-Z]{1,32}/ }
+  # TODO: use key by setting constraints:.
+  get 'microcosms/:id/changesets', to: 'microcosms#show_changesets', :as => :changesets_of_microcosm
   post '/microcosms/discover_changesets', to: 'microcosms#discover_changesets'
   resources :microcosms
   resources :microcosm_changesets

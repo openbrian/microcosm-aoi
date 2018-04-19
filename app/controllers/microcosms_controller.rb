@@ -21,6 +21,11 @@ class MicrocosmsController < ApplicationController
     render action: "show"
   end
 
+  def show_changesets
+    @microcosm = Microcosm.find(params[:id])
+#   render "show_changesets"
+  end
+
   # GET /microcosms/new
   def new
     @microcosm = Microcosm.new
