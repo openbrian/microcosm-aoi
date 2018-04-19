@@ -81,7 +81,7 @@ class MicrocosmsController < ApplicationController
     # Get the greatest known changeset_id for this microcosm.
     max_id = MicrocosmChangeset.where(microcosm_id: @microcosm.id).maximum('changeset_id') || 0
     count_default = 10;
-    count_max = 1000
+    count_max = 10000
     limit = [params.fetch(:count, count_default).to_i, count_max].min
     Osm::Changeset.where("? < max_lon and min_lon < ? and ? < max_lat and min_lat < ?", @microcosm.min_lon, @microcosm.max_lon, @microcosm.min_lat, @microcosm.max_lat).where("? < id", max_id).order(:id).limit(limit).each do |changeset|
       # Copy the user
