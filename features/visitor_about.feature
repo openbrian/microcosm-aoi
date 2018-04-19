@@ -34,3 +34,7 @@ Scenario: Show the twitter link
 @javascript
 Scenario: Show a map
   Then I should see a map of the microcosm centered at their AOI
+
+Scenario: Should not see changesets
+  And I click "Changesets"
+  Then I should see "new session"

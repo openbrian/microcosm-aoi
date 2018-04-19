@@ -4,9 +4,10 @@ Capybara.register_driver :poltergeist do |app|
 end
 Capybara.javascript_driver = :poltergeist
 
+# The lines like "The microcosm HAS..." are not behavior driven.
 
 Given("there is a microcosm {string}") do |name|
-  @the_microcosm = Microcosm.create!(:name => name, :key => name.downcase, :members_num => 353, lat: 38.9, lon:-77.03)
+  @the_microcosm = Microcosm.create!(:name => name, :key => name.downcase, :members_num => 353, lat: 38.9, lon:-77.03, min_lat: 38.516 * 10**7, max_lat: 39.472 * 10**7, min_lon: -77.671 * 10**7, max_lon: -76.349 * 10**7)
 end
 
 
@@ -24,6 +25,13 @@ Given("the microcosm has a member {string} with uid {string} at provider {string
 # fill_in "User", with: '1'
 # click_button
 end
+
+
+Given("the microcosm has a changeset {string} by {string} {string}") do |chid, display_name, user_id|
+  ed = Editor.create!(display_name: display_name, user_id: user_id)
+  @the_microcosm.microcosm_changesets.create(changeset_id: chid, review_num: 0, user_id: user_id, editor_id: ed.id)
+end
+
 
 Given("the microcosm has an organizer {string}") do |name|
   @the_microcosm.organizers.create(user: User.create(name: name))
@@ -50,6 +58,11 @@ end
 
 Given("I am on the home page") do
   visit "/"
+end
+
+
+Given("I click {string}") do |link|
+  click_link link
 end
 
 
