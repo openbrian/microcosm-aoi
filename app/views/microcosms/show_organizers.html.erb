@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<h1>
+  <%= @microcosm.name %>
+</h1>
+
+<%= link_to 'New', new_organizer_path(@microcosm) %>
+
+<div id='Organizers'>
+  <h2>Organizers</h2>
+  <div class='organizers'>
+    <% @microcosm.organizers.each do |organizer| %>
+      <ul>
+        <li><%= organizer.user.name %></li>
+      </ul>
+    <% end %>
+  </div>
+</div>
+

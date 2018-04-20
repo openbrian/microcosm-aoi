@@ -20,7 +20,7 @@ Scenario: Show the list of users
   Then I should see "Brian DeRocher" in the list of members
 
 Scenario: Show the list of organizers
-  Then I should see the "Steven Johnson" in this list of organizers of the microcosm
+  Then I should see "Steven J"
 
 Scenario: Show the list of events
   Then I should see the "Bus Routes" event in the list of events

@@ -1,8 +1,9 @@
 class MicrocosmsController < ApplicationController
-  before_action :set_microcosm, only: [:show, :edit, :update, :destroy]
+  before_action :set_microcosm, only: [:show, :show_changesets, :show_organizers, :edit, :update, :destroy]
   before_action :set_microcosm_by_key, only: [:show_by_key]
   before_action :authenticate, :except => [:index, :show, :show_by_key]  # TODO inherit
   helper_method :current_changesets
+  helper_method :organizer_names
 
   # GET /microcosms
   # GET /microcosms.json
@@ -22,8 +23,9 @@ class MicrocosmsController < ApplicationController
   end
 
   def show_changesets
-    @microcosm = Microcosm.find(params[:id])
-#   render "show_changesets"
+  end
+
+  def show_changesets
   end
 
   # GET /microcosms/new
@@ -77,7 +79,15 @@ class MicrocosmsController < ApplicationController
 
 
   def current_changesets
-    @current_changesets = MicrocosmChangeset.includes(:editor).where(review_num: 0).last(10)
+    MicrocosmChangeset.includes(:editor).where(review_num: 0).last(10)
+  end
+
+
+  def organizer_names
+    @microcosm.organizers.map { |organizer|
+      names = organizer.user.name.split(' ')
+      names.first + ' ' + names.last.first
+    }.join(', ')
   end
 
 

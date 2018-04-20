@@ -6,6 +6,7 @@ Feature: Learn about the Microcosm as a Member
 Background:
   Given there is a microcosm "MappingDC"
   And the microcosm has a member "OpenBrian" with uid "791438" at provider "osm"
+  And the microcosm has an organizer "Steven Johnson"
   And the microcosm has a changeset "56625888" by "OpenBrian" "791438"
   And I sign in as "OpenBrian"
   And I am on the home page
@@ -19,3 +20,10 @@ Scenario: See a list of changsets
   And I am on the microcosm "mappingdc" page
   And I click "Changesets"
   Then I should see "56625888"
+
+@omniauth_test
+Scenario: Show the list of organizers
+  And I am on the microcosm "mappingdc" page
+  And I click "Steven J"
+  Then I should see "Steven Johnson" in the list of organizers of this microcosm
+

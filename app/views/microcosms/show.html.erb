@@ -18,6 +18,10 @@
 </p>
 
 <p>
+  <strong>Organizers:</strong> <%= link_to organizer_names, organizers_of_microcosm_path(@microcosm) %>
+</p>
+
+<p>
   <strong>Members:</strong> <%= @microcosm.members.size %>
 </p>
 
@@ -35,18 +39,6 @@
 
 <%= link_to 'Edit', edit_microcosm_path(@microcosm) %> |
 <%= link_to 'Back', microcosms_path %>
-
-<div id='Organizers'>
-  <h2>Organizers</h2>
-  <div class='organizers'>
-    <% @microcosm.organizers.each do |organizer| %>
-      <ul>
-        <li><%= organizer.user.name %></li>
-      </ul>
-    <% end %>
-  </div>
-</div>
-<%= link_to 'New', new_organizer_path(microcosm_id: 1) %>
 
 <div id='Events'>
   <h2>Events</h2>
