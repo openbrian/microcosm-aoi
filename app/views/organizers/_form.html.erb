@@ -13,12 +13,12 @@
 
   <div class="field">
     <%= form.label :microcosm_id %>
-    <%= form.number_field :microcosm_id, id: :organizer_microcosm_id %>
+    <%= collection_select(:organizer, :microcosm_id, Microcosm.all, :id, :name, :prompt => true) %>
   </div>
 
   <div class="field">
     <%= form.label :user_id %>
-    <%= form.number_field :user_id, id: :organizer_user_id %>
+    <%= collection_select(:organizer, :user_id, User.all, :id, :name, :prompt => true) %>
   </div>
 
   <div class="actions">
