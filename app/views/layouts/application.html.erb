@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>MicrocOSM</title>
+    <title>MicroCosm</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -9,14 +9,16 @@
   </head>
 
   <body>
+    <div id='Auth'>
+      <% if logged_in? %>
+        Welcome <%= current_user.name %> | <%= link_to 'Sign out', signout_path %>
+      <% else %>
+        <%= link_to 'Sign in', sessions_new_path  %>
+      <% end %>
+    </div>
     <h1><%= link_to 'MicrocOSM', root_path  %></h1>
 
     <p class="alert"><%= alert %></p>
-    <% if logged_in? %>
-      Welcome <%= current_user.name %> | <%= link_to 'Sign out', signout_path %>
-    <% else %>
-      <%= link_to 'Sign in', sessions_new_path  %>
-    <% end %>
     <%= yield %>
   </body>
 </html>

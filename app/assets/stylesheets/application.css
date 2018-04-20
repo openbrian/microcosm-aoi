@@ -14,9 +14,141 @@
  *= require_self
  *= require leaflet
  */
-#Map
+html
   {
-  height: 600px;
-  width: 600px;
+  box-sizing: border-box;
+  }
+
+*, *:before, *:after
+  {
+  box-sizing: inherit;
+  }
+
+.flex-row
+  {
+  display: flex;
+  }
+.flex-row > div:not(:first-child)
+  {
+  padding-left: 2em;
+  }
+#Auth
+  {
+  width: 240px;
   float: right;
   }
+#Details
+  {
+  flex: 2;
+  }
+#Events
+  {
+  flex: 1;
+  }
+#Map
+  {
+  height: 371px;
+  width: 600px;
+  float: left;
+  flex: 3;
+  }
+#Members
+  {
+  flex: 1;
+  }
+
+#Members > div > div
+    {
+    width: 8em;
+    height: 8em;
+    border: 1px solid #888;
+    border-radius: 4px;
+    float: left;
+    margin: 1em;
+    padding: 1em;
+    background-color: #DDD;
+    box-sizing: border-box;
+    }
+
+
+body {
+  background-color: #fff;
+  color: #333;
+  margin: 33px;
+  font-family: verdana, arial, helvetica, sans-serif;
+  line-height: 24px;
+}
+
+h1 a {
+  text-decoration: none;
+  font-size: 120%;
+}
+
+a {
+  color: #000;
+
+  &:visited {
+    color: #666;
+  }
+
+  &:hover {
+    color: #fff;
+    background-color: #000;
+  }
+}
+
+div {
+  &.field, &.actions {
+    margin-bottom: 10px;
+  }
+}
+
+.field_with_errors {
+  padding: 2px;
+  background-color: red;
+  display: table;
+}
+
+#error_explanation {
+  width: 450px;
+  border: 2px solid red;
+  padding: 7px 7px 0;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+
+  h2 {
+    text-align: left;
+    font-weight: bold;
+    padding: 5px 5px 5px 15px;
+    font-size: 12px;
+    margin: -7px -7px 0;
+    background-color: #c00;
+    color: #fff;
+  }
+
+  ul li {
+    font-size: 12px;
+    list-style: square;
+  }
+}
+
+label {
+  display: inline-block;
+  color: #AAA;
+  font-size: 90%;
+  width: 5em;
+}
+
+p > strong {
+  margin-left: 1em;
+}
+
+p > strong > a {
+  text-decoration: none;
+}
+
+.new_link {
+  font-size: 60%;
+  width: 3em;
+  float: right;
+}
