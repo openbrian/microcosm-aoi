@@ -21,6 +21,51 @@
     <%= form.text_field :key, id: :microcosm_key %>
   </div>
 
+  <div class="field">
+    <%= form.label :facebook %>
+    <%= form.text_field :facebook, id: :microcosm_facebook %>
+  </div>
+
+  <div class="field">
+    <%= form.label :twitter %>
+    <%= form.text_field :twitter, id: :microcosm_twitter %>
+  </div>
+
+  <div class="field">
+    <%= form.label :lat %>
+    <%= form.text_field :lat, id: :microcosm_lat %>
+  </div>
+
+  <div class="field">
+    <%= form.label :lon %>
+    <%= form.text_field :lon, id: :microcosm_lon %>
+  </div>
+
+  <div class="field">
+    <%= form.label :min_lat %>
+    <%= form.text_field :min_lat, id: :microcosm_min_lat %>
+  </div>
+
+  <div class="field">
+    <%= form.label :max_lat %>
+    <%= form.text_field :max_lat, id: :microcosm_max_lat %>
+  </div>
+
+  <div class="field">
+    <%= form.label :min_lon %>
+    <%= form.text_field :min_lon, id: :microcosm_min_lon %>
+  </div>
+
+  <div class="field">
+    <%= form.label :max_lon %>
+    <%= form.text_field :max_lon, id: :microcosm_max_lon %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_area :description, id: :microcosm_description %>
+  </div>
+
   <div class="actions">
     <%= form.submit %>
   </div>

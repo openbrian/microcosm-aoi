@@ -6,6 +6,7 @@ git_source(:github) do |repo_name|
 end
 
 
+gem 'rails_autolink'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 # Use Capistrano for deployment

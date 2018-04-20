@@ -7,4 +7,6 @@ class Microcosm < ApplicationRecord
   has_many :editors
   has_many :microcosm_changesets
   has_many :changesets, through: :microcosm_changesets
+
+  validates :description, format: { without: /[<>]/, message: "HTML tags are not allowed." }, length: { maximum: 500, too_long: "%{count} characters is the maximum allowed" }
 end

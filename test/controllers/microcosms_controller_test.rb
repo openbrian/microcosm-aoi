@@ -1,4 +1,5 @@
 require 'test_helper'
+require 'rails_autolink'
 
 class MicrocosmsControllerTest < ActionDispatch::IntegrationTest
   setup do
