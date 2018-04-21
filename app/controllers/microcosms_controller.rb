@@ -79,7 +79,7 @@ class MicrocosmsController < ApplicationController
 
 
   def current_changesets
-    MicrocosmChangeset.includes(:editor).where(review_num: 0).last(10)
+    MicrocosmChangeset.includes(:editor).where(microcosm_id: @microcosm.id).where(review_num: 0).last(10)
   end
 
 
