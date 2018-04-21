@@ -9,7 +9,11 @@
   <div class='changesets'>
     <% current_changesets.each do |mc| %>
       <ul>
-        <li><a href="/microcosm_changesets/<%= mc.id %>"><%= mc.changeset_id %> - <%= mc.changeset.closed_at %> - <%= mc.editor.display_name %></a></li>
+        <li>
+          <%= link_to microcosm_changeset_path(mc.id) do %>
+            <%= mc.changeset_id %> - <%= mc.changeset.closed_at %> - <%= mc.editor.display_name %>
+          <% end %>
+        </li>
       </ul>
     <% end %>
   </div>
