@@ -161,6 +161,19 @@ At an event there may not be time for surveyors to enter all their data.  They c
 
 Build native apps for iOS and Android to use the camera and upload them to the server.
 
+## Build-a-mapathon
+
+* Help an organizer pick a location to map based on various criteria like location of development, staleness, feasability (mass transit), etc.
+* Find a quiet place to sit and edit.
+* Break down area to be surveyed into walkable pieces for teams.
+* Print Field Papers.
+
+## Map Fixing for Individuals
+
+* Find map bugs and generate a bikable or walkable path to cover these points.
+* It should be a max bang for your buck type of optimization (use pgrouting).
+* Incorporate mobile apps like StreetComplete and OSMBugs.
+
 # Use
 
 * Feature flags - pda/flip, fetlife/rollout
