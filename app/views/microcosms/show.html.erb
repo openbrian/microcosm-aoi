@@ -19,9 +19,17 @@
     <p>
 <label>Members</label> <strong><%= @microcosm.members.size %></strong>
     </p>
-    <p>
-<label>Share</label> <strong><a href="https://facebook.com/groups/<%=@microcosm.facebook%>">Facebook</a> <a href="https://twitter.com/<%=@microcosm.twitter%>">Twitter</a></strong>
-    </p>
+    <% unless @microcosm.facebook.nil? and @microcosm.twitter.nil? %>
+        <p>
+<label>Share</label>
+        <% unless @microcosm.facebook.nil? %>
+<strong><a href="https://facebook.com/groups/<%=@microcosm.facebook%>">Facebook</a></strong>
+        <% end %>
+        <% unless @microcosm.twitter.nil? %>
+<strong><a href="https://twitter.com/<%=@microcosm.twitter%>">Twitter</a></strong>
+        <% end %>
+        </p>
+    <% end %>
     <p>
 <%= link_to 'Changesets', changesets_of_microcosm_path(@microcosm) %>
     </p>
