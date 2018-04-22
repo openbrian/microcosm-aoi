@@ -8,7 +8,7 @@ class MicrocosmsController < ApplicationController
   # GET /microcosms
   # GET /microcosms.json
   def index
-    @microcosms = Microcosm.all
+    @microcosms = Microcosm.order(:name)
   end
 
   # GET /microcosms/1
