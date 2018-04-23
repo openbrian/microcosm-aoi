@@ -24,52 +24,11 @@ html
   box-sizing: inherit;
   }
 
-.flex-row
-  {
-  display: flex;
-  }
-.flex-row > div:not(:first-child)
-  {
-  padding-left: 2em;
-  }
 #Auth
   {
   width: 240px;
   float: right;
   }
-#Details
-  {
-  flex: 2;
-  }
-#Events
-  {
-  flex: 1;
-  }
-#Map
-  {
-  height: 371px;
-  width: 600px;
-  float: left;
-  flex: 3;
-  }
-#Members
-  {
-  flex: 1;
-  }
-
-#Members > div > div
-    {
-    width: 8em;
-    height: 8em;
-    border: 1px solid #888;
-    border-radius: 4px;
-    float: left;
-    margin: 1em;
-    padding: 1em;
-    background-color: #DDD;
-    box-sizing: border-box;
-    }
-
 
 body {
   background-color: #fff;

@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<div class='flex-row'>
+<div class='mc-row'>
 <%= map(:container_id => 'Map',
   :center => {
   :latlng => [@microcosm.lat, @microcosm.lon],
@@ -37,7 +37,7 @@
   </div>
 </div>
 
-<div class='flex-row'>
+<div class='mc-row'>
   <div id='Members'>
     <h2>
 Members <%= link_to 'New', new_member_path(microcosm_id: 1), :class => 'new_link' %>

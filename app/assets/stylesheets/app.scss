@@ -1,0 +1,18 @@
+@import 'flexbox_sass_rails';
+
+.mc-row {
+  @include fb-layout-row-column;
+  @include fb-layout-column;
+  > div {
+    @extend .fb-flex;
+  }
+}
+
+@media (min-width: $fb-layout-sm) {
+  .mc-row {
+    @include fb-layout-row;
+    > div:not(:first-child) {
+      padding-left: 2em;
+    }
+  }
+}
