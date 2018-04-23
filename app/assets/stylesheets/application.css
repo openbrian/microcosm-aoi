@@ -24,12 +24,6 @@ html
   box-sizing: inherit;
   }
 
-#Auth
-  {
-  width: 240px;
-  float: right;
-  }
-
 body {
   background-color: #fff;
   color: #333;

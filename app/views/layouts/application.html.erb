@@ -10,14 +10,20 @@
   </head>
 
   <body>
-    <div id='Auth'>
-      <% if logged_in? %>
-        Welcome <%= current_user.name %> | <%= link_to 'Sign out', signout_path %>
-      <% else %>
-        <%= link_to 'Sign in', sessions_new_path  %>
-      <% end %>
+    <div class='mc-row'>
+      <div>
+        <h1>
+<%= link_to 'MicrocOSM', root_path  %>
+        </h1>
+      </div>
+      <div id='Auth'>
+        <% if logged_in? %>
+          Welcome <%= current_user.name %> | <%= link_to 'Sign out', signout_path %>
+        <% else %>
+          <%= link_to 'Sign in', sessions_new_path  %>
+        <% end %>
+      </div>
     </div>
-    <h1><%= link_to 'MicrocOSM', root_path  %></h1>
 
     <p class="alert"><%= alert %></p>
     <%= yield %>
