@@ -40,7 +40,7 @@
 <div class='mc-row'>
   <div id='Members'>
     <h2>
-Members <%= link_to 'New', new_member_path(microcosm_id: 1), :class => 'new_link' %>
+Members <%= link_to 'New', new_member_path(microcosm_id: @microcosm.id), :class => 'new_link' %>
     </h2>
     <div class='members'>
       <% @microcosm.members.each do |member| %>
@@ -52,7 +52,7 @@ Members <%= link_to 'New', new_member_path(microcosm_id: 1), :class => 'new_link
   </div>
   <div id='Events'>
     <h2>
-Upcoming Events <%= link_to 'New', new_event_path(microcosm_id: 1), :class => 'new_link' %>
+Upcoming Events <%= link_to 'New', new_event_path(microcosm_id: @microcosm.id), :class => 'new_link' %>
     </h2>
     <div class='events'>
       <ul>
