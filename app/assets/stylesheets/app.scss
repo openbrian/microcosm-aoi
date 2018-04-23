@@ -10,10 +10,17 @@ html
   box-sizing: inherit;
   }
 
+a {
+  color: #222;
+
+  &:visited {
+    color: #333;
+  }
+}
+
 body {
   background-color: #fff;
-  color: #333;
-  margin: 33px;
+  color: #444;
   font-family: verdana, arial, helvetica, sans-serif;
   line-height: 24px;
 }
@@ -21,18 +28,8 @@ body {
 h1 a {
   text-decoration: none;
   font-size: 120%;
-}
-
-a {
-  color: #000;
-
-  &:visited {
-    color: #666;
-  }
-
-  &:hover {
-    color: #fff;
-    background-color: #000;
+  span {
+    color: #555;
   }
 }
 
