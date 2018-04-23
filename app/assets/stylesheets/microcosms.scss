@@ -6,8 +6,9 @@
 
 #Members
   {
-  > div > div
+  > div > a
       {
+      display: block;
       width: 8em;
       height: 8em;
       border: 1px solid #888;
@@ -17,6 +18,7 @@
       padding: 1em;
       background-color: #DDD;
       box-sizing: border-box;
+      text-decoration: none;
       }
   }
 
