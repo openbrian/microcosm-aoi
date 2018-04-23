@@ -1,5 +1,5 @@
 class MicrocosmsController < ApplicationController
-  before_action :set_microcosm, only: [:show, :show_changesets, :show_organizers, :edit, :update, :destroy]
+  before_action :set_microcosm, only: [:show, :show_changesets, :show_organizers, :show_members, :edit, :update, :destroy]
   before_action :set_microcosm_by_key, only: [:show_by_key]
   before_action :authenticate, :except => [:index, :show, :show_by_key]  # TODO inherit
   helper_method :current_changesets
@@ -25,7 +25,10 @@ class MicrocosmsController < ApplicationController
   def show_changesets
   end
 
-  def show_changesets
+  def show_organizers
+  end
+
+  def show_members
   end
 
   # GET /microcosms/new

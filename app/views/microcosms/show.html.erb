@@ -17,7 +17,7 @@
 <label>Organizers</label> <strong><%= link_to organizer_names, organizers_of_microcosm_path(@microcosm) %></strong>
     </p>
     <p>
-<label>Members</label> <strong><%= @microcosm.members.size %></strong>
+<label>Members</label> <strong><%= link_to @microcosm.members.size, members_of_microcosm_path(@microcosm) %></strong>
     </p>
     <% unless @microcosm.facebook.nil? and @microcosm.twitter.nil? %>
         <p>
@@ -40,7 +40,7 @@
 <div class='mc-row'>
   <div id='Members'>
     <h2>
-Members <%= link_to 'New', new_member_path(microcosm_id: @microcosm.id), :class => 'new_link' %>
+<%= link_to 'Members', members_of_microcosm_path(@microcosm) %> <%= link_to 'New', new_member_path(microcosm_id: @microcosm.id), :class => 'new_link' %>
     </h2>
     <div class='members'>
       <% @microcosm.members.each do |member| %>

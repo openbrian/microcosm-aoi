@@ -7,12 +7,13 @@
 <%= link_to 'New', new_organizer_path(@microcosm) %>
 
 <h2>
-Organizers
+Members
 </h2>
 <div class='organizers'>
-  <% @microcosm.organizers.each do |organizer| %>
+  <% @microcosm.members.each do |member| %>
     <ul>
-      <li><%= organizer.user.name %></li>
+      <li><%= member.user.name %></li>
     </ul>
   <% end %>
 </div>
+
