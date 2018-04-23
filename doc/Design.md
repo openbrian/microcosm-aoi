@@ -32,6 +32,10 @@ There are various hosting options:
 
 ## As a Visitor
 
+### About the map
+
+- [ ] See Notes on the map that need resolution
+
 ### About the microcosm
 
 - [x] See description of the microcosm
@@ -61,7 +65,6 @@ There are various hosting options:
 
 ### About the member
 
-- [ ] See Notes on the map that need resolution
 - [ ] See their profile
 - [ ] See their upcoming events
 - [ ] See their past events
@@ -86,9 +89,13 @@ There are various hosting options:
 
 ## As an Organizer
 
+### About the mapathon
+
+- [ ] Can adjust the center location and bounds of the AOI
+
 ### About the microcosm
 
-- [ ] Manage description
+- [ ] Manage the description
 - [ ] Identify sister microcosms
 
 ### Events
@@ -121,25 +128,6 @@ There are various hosting options:
 * http://osmose.openstreetmap.fr/en/map/
 * https://wiki.openstreetmap.org/wiki/OSM_Inspector
 
-
-# Ideas
-
-* nanocosm
-* Map of user groups around the world http://usergroups.openstreetmap.de/
-* DC Wiki - How do we do x?  e.g. sidewalks
-
-# See Also
-
-* https://wiki.openstreetmap.org/wiki/User_group
-* https://github.com/maptime/maptime.github.io/blob/master/_data/chapters.json
-* https://wiki.openstreetmap.org/wiki/User:Mvexel/New_User_Welcome_Message
-* https://www.wmata.com/schedules/timetables/all-routes.cfm?State=DC
-* https://github.com/fossgis/usergroups-bot - This is a bot written in Python, collection all Template:User_group together and generating a KML file to show them on a map: http://usergroups.openstreetmap.de
-
-# Integration
-
-* https://github.com/kort/kort
-* StreetComplete
 
 # Use Cases
 
@@ -180,5 +168,24 @@ Build native apps for iOS and Android to use the camera and upload them to the s
 
 * Feature flags - pda/flip, fetlife/rollout
 * Internationalization
+
+# Ideas
+
+* nanocosm
+* Map of user groups around the world http://usergroups.openstreetmap.de/
+* DC Wiki - How do we do x?  e.g. sidewalks
+
+# See Also
+
+* https://wiki.openstreetmap.org/wiki/User_group
+* https://github.com/maptime/maptime.github.io/blob/master/_data/chapters.json
+* https://wiki.openstreetmap.org/wiki/User:Mvexel/New_User_Welcome_Message
+* https://www.wmata.com/schedules/timetables/all-routes.cfm?State=DC
+* https://github.com/fossgis/usergroups-bot - This is a bot written in Python, collection all Template:User_group together and generating a KML file to show them on a map: http://usergroups.openstreetmap.de
+
+# Integration
+
+* https://github.com/kort/kort
+* StreetComplete
 
 
