@@ -1,16 +1,18 @@
 # Microcosm
 
-Micrososm is a website that supports the activities of OpenStreetMap local user groups.  A microcosm exists for a city.
+Micrososm is a website that supports the activities of OpenStreetMap local user groups.  These activities include:
 
-Each group A user may have an account on multiple microcosms.
-
-Not a single local group because
-
-* software version updates
-* some features may apply to users across multiple microcosms
-* This may be integrated with OSM one day
+* membership tracking
+* communication with members
+* showcase recent achievements of the microcosm
+* inform people about upcoming mapping events
+* highlight places of staleness on the local map
+* review changsets
+* build walkable and bikable routes for fixing OSM bugs
 
 ## Sample URLs
+
+There are various hosting options:
 
 > http://mappingdc.org/microcosm
 
