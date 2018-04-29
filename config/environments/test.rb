@@ -39,4 +39,7 @@ Rails.application.configure do
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
+
+# config.sass.load_paths << "#{Gem.loaded_specs['flexbox_sass_rails'].full_gem_path}/app/assets/stylesheets"
+  config.assets.paths << "#{Gem.loaded_specs['flexbox_sass_rails'].full_gem_path}/app/assets/stylesheets"
 end
