@@ -47,6 +47,7 @@ group :development, :test do
   gem 'motion-markdown-it'
   gem 'motion-markdown-it-plugins'
   gem 'poltergeist'
+  gem 'rails-erd'
   gem 'rspec-expectations'
   gem 'seed_dump'
   gem 'selenium-webdriver'
