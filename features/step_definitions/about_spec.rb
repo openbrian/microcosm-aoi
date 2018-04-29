@@ -97,8 +97,8 @@ Then("I should see {string} in the list of members") do |name|
 end
 
 Then("I should see {string} in the list of organizers of this microcosm") do |name|
-  within '#Organizers' do
-    expect(page).to have_content('Organizers')
+  expect(page).to have_content('Organizers')
+  within '.organizers' do
     expect(page).to have_content(name)
   end
 end
