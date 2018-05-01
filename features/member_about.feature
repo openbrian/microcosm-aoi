@@ -6,7 +6,7 @@ Feature: Learn about the Microcosm as a Member
 Background:
   Given there is a microcosm "MappingDC"
   And the microcosm has a member "OpenBrian" with uid "791438" at provider "osm"
-  And the microcosm has an organizer "Steven Johnson"
+  And the microcosm has an organizer "Steven Johnson" with uid "25398"
   And the microcosm has a changeset "56625888" by "OpenBrian" "791438"
   And I sign in as "OpenBrian"
   And I am on the home page

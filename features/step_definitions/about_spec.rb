@@ -22,7 +22,7 @@ end
 
 
 Given("the microcosm has a member {string} with uid {string} at provider {string}") do |name, uid, provider|
-  @the_microcosm.members.create(user: User.create(name: name, uid: uid, provider: provider))
+  @the_microcosm.members.create(user: User.create!(name: name, uid: uid, provider: provider))
 # visit "/users/new"
 # fill_in "Name", with: "Brian DeRocher"
 # click_button
@@ -39,8 +39,8 @@ Given("the microcosm has a changeset {string} by {string} {string}") do |chid, d
 end
 
 
-Given("the microcosm has an organizer {string}") do |name|
-  @the_microcosm.organizers.create(user: User.create(name: name))
+Given("the microcosm has an organizer {string} with uid {string}") do |name, uid|
+  @the_microcosm.organizers.create(user: User.create!(name: name, uid: uid))
 end
 
 Given("the microcosm has a {string} event") do |title|

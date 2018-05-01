@@ -1,6 +1,6 @@
 # See https://github.com/openstreetmap/openstreetmap-website/blob/master/app/models/user.rb
 class User < ApplicationRecord
-  belongs_to :osm_user, class_name: "Osm::User"
+  belongs_to :osm_user, foreign_key: "uid", class_name: "Osm::User"
   has_many :members
   has_many :microcosms, through: :members
   has_many :organizers

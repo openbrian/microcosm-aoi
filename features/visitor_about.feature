@@ -5,8 +5,8 @@ Feature: Learn about the Microcosm
 
 Background:
   Given there is a microcosm "MappingDC"
-  And the microcosm has a member "Brian DeRocher"
-  And the microcosm has an organizer "Steven Johnson"
+  And the microcosm has a member "Brian DeRocher" with uid "791438" at provider "osm"
+  And the microcosm has an organizer "Steven Johnson" with uid "25398"
   And the microcosm has a "Bus Routes" event
   And the microcosm has facebook page "mappingdc"
   And the microcosm has twitter account "mappingdc"
