@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180421165853) do
+ActiveRecord::Schema.define(version: 20180424231447) do
 
   create_table "editors", force: :cascade do |t|
     t.bigint "user_id", null: false
@@ -54,6 +54,7 @@ ActiveRecord::Schema.define(version: 20180421165853) do
   create_table "microcosms", force: :cascade do |t|
     t.string "name", null: false
     t.string "key", null: false
+    t.integer "members_count", default: 0, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "facebook"
@@ -64,7 +65,6 @@ ActiveRecord::Schema.define(version: 20180421165853) do
     t.integer "max_lat", null: false
     t.integer "min_lon", null: false
     t.integer "max_lon", null: false
-    t.integer "members_count", default: 0
     t.text "description"
     t.index ["key"], name: "index_microcosms_on_key", unique: true
   end
