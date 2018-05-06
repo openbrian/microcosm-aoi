@@ -111,7 +111,7 @@ class MicrocosmsController < ApplicationController
         u.updated_at = osm_user.creation_time
       end
       # TODO: Use default value for review_num.
-      mc = MicrocosmChangeset.new(microcosm_id: @microcosm.id, changeset_id: changeset.id, user_id: changeset.user_id, review_num: 0)
+      mc = MicrocosmChangeset.new(microcosm_id: @microcosm.id, changeset_id: changeset.id, user_id: u.id, review_num: 0)
       mc.save(validate: false)
     end
     render action: "show"
