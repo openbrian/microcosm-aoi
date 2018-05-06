@@ -82,7 +82,7 @@ class MicrocosmsController < ApplicationController
 
 
   def current_changesets
-    MicrocosmChangeset.includes(:editor).where(microcosm_id: @microcosm.id).where(review_num: 0).last(10)
+    MicrocosmChangeset.includes(:user).where(microcosm_id: @microcosm.id).where(review_num: 0).last(10)
   end
 
 
@@ -104,12 +104,14 @@ class MicrocosmsController < ApplicationController
     Osm::Changeset.where("? < max_lon and min_lon < ? and ? < max_lat and min_lat < ?", @microcosm.min_lon, @microcosm.max_lon, @microcosm.min_lat, @microcosm.max_lat).where("? < id", max_id).order(:id).limit(limit).each do |changeset|
       # Copy the user
       osm_user = Osm::User.find(changeset.user_id)
-      e = Editor.find_or_create_by(user_id: changeset.user_id) do |e|
-        e.user_id = changeset.user_id
-        e.display_name = osm_user.display_name
+      u = User.find_or_create_by(uid: changeset.user_id) do |u|
+        u.uid = changeset.user_id
+        u.name = osm_user.display_name
+        u.created_at = osm_user.creation_time
+        u.updated_at = osm_user.creation_time
       end
       # TODO: Use default value for review_num.
-      mc = MicrocosmChangeset.new(microcosm_id: @microcosm.id, changeset_id: changeset.id, user_id: changeset.user_id, editor_id: e.id, review_num: 0)
+      mc = MicrocosmChangeset.new(microcosm_id: @microcosm.id, changeset_id: changeset.id, user_id: changeset.user_id, review_num: 0)
       mc.save(validate: false)
     end
     render action: "show"
