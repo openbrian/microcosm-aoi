@@ -5,6 +5,7 @@ class User < ApplicationRecord
   has_many :microcosms, through: :members
   has_many :organizers
   has_many :microcosms, through: :organizers
+  has_many :microcosm_changsets
 
    def self.create_from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create! do |user|
