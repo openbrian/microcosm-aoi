@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180424231447) do
+ActiveRecord::Schema.define(version: 20180505051205) do
 
   create_table "editors", force: :cascade do |t|
     t.bigint "user_id", null: false
@@ -46,7 +46,6 @@ ActiveRecord::Schema.define(version: 20180424231447) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "user_id", limit: 8, null: false
-    t.bigint "editor_id", null: false
     t.index ["changeset_id"], name: "index_microcosm_changesets_on_changeset_id"
     t.index ["microcosm_id"], name: "index_microcosm_changesets_on_microcosm_id"
   end

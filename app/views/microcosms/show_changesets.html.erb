@@ -11,7 +11,7 @@
       <ul>
         <li>
           <%= link_to microcosm_changeset_path(mc.id) do %>
-            <%= mc.changeset_id %> - <%= mc.changeset.closed_at %> - <%= mc.editor.display_name %>
+            <%= mc.changeset_id %> - <%= mc.changeset.closed_at %> - <%= mc.user.name %>
           <% end %>
         </li>
       </ul>
