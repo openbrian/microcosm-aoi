@@ -18,7 +18,7 @@
 
   <div class="field">
     <%= form.label :user_id %>
-    <%= collection_select(:member, :user_id, User.all, :id, :name, :prompt => true) %>
+    <%= collection_select(:member, :user_id, User.order('name').all, :id, :name, :prompt => true) %>
   </div>
 
   <div class="actions">
