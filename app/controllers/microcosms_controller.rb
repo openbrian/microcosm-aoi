@@ -88,8 +88,9 @@ class MicrocosmsController < ApplicationController
 
   def organizer_names
     @microcosm.organizers.map { |organizer|
-      names = organizer.user.name.split(' ')
-      names.first + ' ' + names.last.first
+#     names = organizer.user.name.split(' ')
+#     names.first + ' ' + names.last.first
+      organizer.user.name
     }.join(', ')
   end
 
