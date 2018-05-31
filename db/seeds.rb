@@ -5,9 +5,9 @@ e1, = Event.create!([
   {title: "Mappy Hour", moment: "2019-01-24 07:20:00", location: "Capitol City Brewing", description: "Join us for discussions of mapping.", microcosm_id: m1.id}
 ])
 u1, u2, u3 = User.create!([
-  {name: "Brian DeRocher", provider: "osm", uid: 791438},
-  {name: "Steven Johnson", provider: "osm", uid: 25398},
-  {name: "Andrew Wiseman", provider: "osm", uid: 408282}
+  {name: "OpenBrian", provider: "osm", uid: 791438},
+  {name: "seohnson", provider: "osm", uid: 25398},
+  {name: "Marion Barry", provider: "osm", uid: 408282}
 ])
 Member.create!([
   {microcosm_id: m1.id, user_id: u2.id},
