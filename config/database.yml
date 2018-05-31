@@ -11,7 +11,13 @@ default: &default
 
 development:
   <<: *default
-  database: db/development.sqlite3
+  adapter: postgresql
+  encoding: unicode
+  host: <%= ENV.fetch("DB_HOST") %>
+  port: <%= ENV.fetch("DB_PORT") %>
+  database: <%= ENV.fetch("DB_NAME") %>
+  username: <%= ENV.fetch("DB_USERNAME") %>
+  password: <%= ENV.fetch("DB_PASSWORD") %>
 
 osm:
   adapter: postgresql
@@ -32,10 +38,10 @@ production:
   <<: *default
   adapter: postgresql
   encoding: unicode
-  host: <%= ENV.fetch("PROD_DB_HOST") %>
-  database: <%= ENV.fetch("PROD_DB_NAME") %>
-  username: <%= ENV.fetch("PROD_DB_USERNAME") %>
-  password: <%= ENV.fetch("PROD_DB_PASSWORD") %>
+  host: <%= ENV.fetch("DB_HOST") %>
+  database: <%= ENV.fetch("DB_NAME") %>
+  username: <%= ENV.fetch("DB_USERNAME") %>
+  password: <%= ENV.fetch("DB_PASSWORD") %>
 
 cucumber:
   <<: *test
