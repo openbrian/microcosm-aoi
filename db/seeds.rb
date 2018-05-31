@@ -20,5 +20,5 @@ e1, = Editor.create!([
   {user_id: 791438, display_name: "OpenBrian"}
 ])
 MicrocosmChangeset.create!([
-  {microcosm_id: m1.id, changeset_id: 56625888, user_id: 791438, editor_id: e1.id, review_num: 0}
+  {microcosm_id: m1.id, changeset_id: 56625888, user_id: e1.id, review_num: 0}
 ])
