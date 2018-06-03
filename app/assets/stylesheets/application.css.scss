@@ -79,6 +79,15 @@ div {
   display: table;
 }
 
+.mc-link-button {
+  display: inline-block;
+  border-radius: 6px;
+  border: 1px solid #444;
+  padding: 1em 2em;
+  text-align: center;
+  text-decoration: none;
+}
+
 .mc-row {
   @include fb-layout-row-column;
   @include fb-layout-column;

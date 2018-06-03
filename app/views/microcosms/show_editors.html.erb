@@ -16,7 +16,7 @@ Editors of <%= @microcosm.name %>
       <% recent_first_editors.each do |e| %>
         <tr>
           <td><%= e.uid %></td>
-          <td><%= e.name %></td>
+          <td><%= link_to e.name, user_path(e) %></td>
           <td><a href="https://openstreetmap.org/changeset/<%= e.first_edit.changeset_id %>"><%= e.first_edit.changeset_id %></a></td>
         </tr>
       <% end %>
