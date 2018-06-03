@@ -6,6 +6,10 @@ class User < ApplicationRecord
   has_many :organizers
   has_many :microcosms, through: :organizers
   has_many :microcosm_changsets
+  has_one :first_edit, -> {
+    select("distinct on (user_id) *")
+    .order(:user_id, :changeset_id)
+  }, class_name: "MicrocosmChangeset"
 
    def self.create_from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create! do |user|

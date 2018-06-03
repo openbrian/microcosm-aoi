@@ -1,7 +1,8 @@
 class MicrocosmsController < ApplicationController
-  before_action :set_microcosm, only: [:show, :show_changesets, :show_organizers, :show_members, :edit, :update, :destroy]
+  before_action :set_microcosm, only: [:show, :show_editors, :show_changesets, :show_organizers, :show_members, :edit, :update, :destroy]
   before_action :set_microcosm_by_key, only: [:show_by_key]
   before_action :authenticate, :except => [:index, :show, :show_by_key]  # TODO inherit
+  helper_method :recent_first_editors
   helper_method :current_changesets
   helper_method :organizer_names
 
@@ -20,6 +21,9 @@ class MicrocosmsController < ApplicationController
   # GET /microcosms/mycity.json
   def show_by_key
     render action: "show"
+  end
+
+  def show_editors
   end
 
   def show_changesets
@@ -78,6 +82,11 @@ class MicrocosmsController < ApplicationController
       format.html { redirect_to microcosms_url, notice: 'Microcosm was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+
+  def recent_first_editors
+    @rfe = User.includes(:first_edit).order('uid::int desc').first(40)
   end
 
 
