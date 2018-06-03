@@ -9,15 +9,16 @@ Editors of <%= @microcosm.name %>
   <div class='changesets'>
     <table>
       <tr>
-        <th>UID</th>
         <th>Name</th>
         <th>Changeset</th>
+        <th>Timestamp</th>
       </tr>
       <% recent_first_editors.each do |e| %>
         <tr>
-          <td><%= e.uid %></td>
           <td><%= link_to e.name, user_path(e) %></td>
           <td><a href="https://openstreetmap.org/changeset/<%= e.first_edit.changeset_id %>"><%= e.first_edit.changeset_id %></a></td>
+          <% #TODO: This is the 1+N problem. %>
+          <td><%= e.first_edit.changeset.created_at %></td>
         </tr>
       <% end %>
     </table>
