@@ -8,7 +8,7 @@
 }) %>
   <div id='Details'>
     <h1>
-<%= link_to @microcosm.name, @microcosm %>
+<%= link_to @microcosm.name, @microcosm %> <%= link_to 'Edit', edit_microcosm_path(@microcosm), :class => 'edit_link' %>
     </h1>
     <p>
 <%= auto_link @microcosm.description %>
@@ -33,7 +33,6 @@
     <p>
 <%= link_to 'Changesets', changesets_of_microcosm_path(@microcosm) %>
     </p>
-<%= link_to 'Edit', edit_microcosm_path(@microcosm) %>
   </div>
 </div>
 
