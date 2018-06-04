@@ -15,6 +15,9 @@
 @import 'flexbox_sass_rails';
 @import 'microcosms';
 
+$green: #7ebc6f;
+$green-light: #dcedd7;
+
 html
   {
   box-sizing: border-box;
@@ -82,10 +85,14 @@ div {
 .mc-link-button {
   display: inline-block;
   border-radius: 6px;
-  border: 1px solid #444;
-  padding: 1em 2em;
+  border: 1px solid $green;
+  padding: 5px 15px;
   text-align: center;
   text-decoration: none;
+  color: $green;
+  &:hover {
+    background-color: $green-light;
+  }
 }
 
 .mc-row {
