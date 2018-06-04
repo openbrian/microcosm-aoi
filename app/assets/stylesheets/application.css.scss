@@ -21,6 +21,8 @@ $green-light: #dcedd7;
 html
   {
   box-sizing: border-box;
+  background-color: #EEE;
+  margin: 0;
   }
 
 *, *:before, *:after
@@ -37,7 +39,6 @@ a {
 }
 
 body {
-  background-color: #fff;
   color: #444;
   font-family: verdana, arial, helvetica, sans-serif;
   line-height: 24px;
