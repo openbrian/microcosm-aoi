@@ -15,8 +15,9 @@
 @import 'flexbox_sass_rails';
 @import 'microcosms';
 
-$green: #7ebc6f;
 $green-light: #dcedd7;
+$green: #7ebc6f;
+$green-dark: #549b43;
 
 html
   {
@@ -90,9 +91,12 @@ div {
   padding: 5px 15px;
   text-align: center;
   text-decoration: none;
-  color: $green;
+  color: $green-dark;
   &:hover {
     background-color: $green-light;
+  }
+  &:visited {
+    color: $green;
   }
 }
 
