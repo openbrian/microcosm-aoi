@@ -6,6 +6,7 @@ class User < ApplicationRecord
   has_many :organizers
   has_many :microcosms, through: :organizers
   has_many :microcosm_changsets
+  # https://www.toasterlovin.com/greatest-per-group-rails-scoped-has-one/
   has_one :first_edit, -> {
     select("distinct on (user_id) *")
     .order(:user_id, :changeset_id)
