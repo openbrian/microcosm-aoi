@@ -10,7 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180505051205) do
+ActiveRecord::Schema.define(version: 20180624015954) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
   create_table "editors", force: :cascade do |t|
     t.bigint "user_id", null: false
@@ -41,11 +44,11 @@ ActiveRecord::Schema.define(version: 20180505051205) do
 
   create_table "microcosm_changesets", force: :cascade do |t|
     t.integer "microcosm_id"
-    t.integer "changeset_id", limit: 8
+    t.bigint "changeset_id"
     t.integer "review_num"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "user_id", limit: 8, null: false
+    t.bigint "user_id", null: false
     t.index ["changeset_id"], name: "index_microcosm_changesets_on_changeset_id"
     t.index ["microcosm_id"], name: "index_microcosm_changesets_on_microcosm_id"
   end
@@ -65,6 +68,7 @@ ActiveRecord::Schema.define(version: 20180505051205) do
     t.integer "min_lon", null: false
     t.integer "max_lon", null: false
     t.text "description"
+    t.string "welcome_message", default: "Welcome to OSM and thanks for your improvements to the map.", null: false
     t.index ["key"], name: "index_microcosms_on_key", unique: true
   end
 
@@ -83,6 +87,7 @@ ActiveRecord::Schema.define(version: 20180505051205) do
     t.datetime "updated_at", null: false
     t.string "provider"
     t.string "uid"
+    t.boolean "welcomed", default: false, null: false
   end
 
 end

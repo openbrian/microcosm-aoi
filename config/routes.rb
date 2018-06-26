@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   get 'microcosms/:id/changesets', to: 'microcosms#show_changesets', :as => :changesets_of_microcosm
   get 'microcosms/:id/organizers', to: 'microcosms#show_organizers', :as => :organizers_of_microcosm
   get 'microcosms/:id/members', to: 'microcosms#show_members', :as => :members_of_microcosm
+  get 'microcosms/:id/welcome/:editor_id', to: 'microcosms#welcome_editor_form', :as => :welcome_editor_form
   post '/microcosms/discover_changesets', to: 'microcosms#discover_changesets'
   resources :microcosms
   resources :microcosm_changesets

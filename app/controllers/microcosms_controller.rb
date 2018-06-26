@@ -1,5 +1,5 @@
 class MicrocosmsController < ApplicationController
-  before_action :set_microcosm, only: [:show, :show_editors, :show_changesets, :show_organizers, :show_members, :edit, :update, :destroy]
+  before_action :set_microcosm, only: [:show, :show_editors, :show_changesets, :show_organizers, :show_members, :edit, :update, :destroy, :welcome_editor_form]
   before_action :set_microcosm_by_key, only: [:show_by_key]
   before_action :authenticate, :except => [:index, :show, :show_by_key]  # TODO inherit
   helper_method :recent_first_editors
@@ -128,6 +128,12 @@ class MicrocosmsController < ApplicationController
   end
 
 
+  def welcome_editor_form
+    @editor = User.find(params[:editor_id])
+    render 'welcome_editor_form'
+  end
+
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_microcosm
@@ -140,6 +146,6 @@ class MicrocosmsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def microcosm_params
-      params.require(:microcosm).permit(:name, :key, :facebook, :twitter, :lat, :lon, :min_lat, :max_lat, :min_lon, :max_lon, :description)
+      params.require(:microcosm).permit(:name, :key, :facebook, :twitter, :lat, :lon, :min_lat, :max_lat, :min_lon, :max_lon, :description, :welcome_message)
     end
 end

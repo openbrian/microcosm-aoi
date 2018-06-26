@@ -1,0 +1,25 @@
+<p>
+Copy and paste this into your message on OSM.org.
+</p>
+<%= form_tag do %>
+
+  <div class="field">
+    <%= label_tag :to %>
+    <%= text_field_tag :to, @editor.name %>
+  </div>
+
+  <div class="field">
+    <%= label_tag :subject %>
+    <%= text_field_tag :subject, 'Welcome to OpenStreetMap' %>
+  </div>
+
+  <div class="field">
+    <%= label_tag :body %>
+    <%= text_area_tag :body, @microcosm.welcome_message %>
+  </div>
+
+  <div class="actions">
+    <%= submit_tag %>
+  </div>
+
+<% end %>
