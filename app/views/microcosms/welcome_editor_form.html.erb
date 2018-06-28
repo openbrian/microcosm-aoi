@@ -1,25 +1,26 @@
-<p>
-Copy and paste this into your message on OSM.org.
-</p>
 <%= form_tag do %>
 
   <div class="field">
     <%= label_tag :to %>
-    <%= text_field_tag :to, @editor.name %>
+    <%= text_field_tag :to, @editor.name, disabled: true %>
   </div>
 
   <div class="field">
     <%= label_tag :subject %>
-    <%= text_field_tag :subject, 'Welcome to OpenStreetMap' %>
+    <%= text_field_tag :subject, @subject, disabled: true %>
   </div>
 
   <div class="field">
     <%= label_tag :body %>
-    <%= text_area_tag :body, @microcosm.welcome_message %>
+    <%= text_area_tag :body, @welcome_message, disabled: true %>
   </div>
 
+  <p>
+<a href="https://www.openstreetmap.org/message/new/Skuwanja?<%= @qs %>" target="_blank">Send Message From OSM</a> ->
+  </p>
+
   <div class="actions">
-    <%= submit_tag %>
+    <%= submit_tag 'Done' %>
   </div>
 
 <% end %>

@@ -1,5 +1,5 @@
 class MicrocosmsController < ApplicationController
-  before_action :set_microcosm, only: [:show, :show_editors, :show_changesets, :show_organizers, :show_members, :edit, :update, :destroy, :welcome_editor_form]
+  before_action :set_microcosm, only: [:show, :show_editors, :show_changesets, :show_organizers, :show_members, :edit, :update, :destroy, :welcome_editor, :welcome_editor_form]
   before_action :set_microcosm_by_key, only: [:show_by_key]
   before_action :authenticate, :except => [:index, :show, :show_by_key]  # TODO inherit
   helper_method :recent_first_editors
@@ -128,8 +128,19 @@ class MicrocosmsController < ApplicationController
   end
 
 
+  def welcome_editor
+    editor = User.find(params[:editor_id])
+    editor.welcomed = true
+    editor.save
+    redirect_to @microcosm
+  end
+
+
   def welcome_editor_form
     @editor = User.find(params[:editor_id])
+    @subject = 'Welcome to OpenStreetMap'
+    @welcome_message = @microcosm.welcome_message.sub! '{{name}}', @editor.name
+    @qs = URI.encode_www_form([['message[title]', @subject], ['message[body]', @welcome_message]])
     render 'welcome_editor_form'
   end
 
