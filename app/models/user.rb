@@ -1,7 +1,5 @@
 # See https://github.com/openstreetmap/openstreetmap-website/blob/master/app/models/user.rb
 class User < ApplicationRecord
-  attribute :welcomed, :boolean, default: false
-
 # belongs_to :osm_user, foreign_key: "uid", class_name: "Osm::User"
   has_many :members
   has_many :microcosms, through: :members
