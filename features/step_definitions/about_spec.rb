@@ -22,10 +22,8 @@ end
 
 
 Given("the microcosm has a member {string} with uid {string} at provider {string}") do |name, uid, provider|
-  u = User.find_or_create_by(uid: uid) do |u|
-    u.uid = uid
+  u = User.find_or_initialize_by(uid: uid) do |u|
     u.name = name
-    u.provider = 'osm'
   end
   @the_microcosm.members.create(user: u)
 # visit "/users/new"

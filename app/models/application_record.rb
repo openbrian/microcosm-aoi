@@ -4,7 +4,7 @@ class ApplicationRecord < ActiveRecord::Base
 
   def normalize_blank_values
     attributes.each do |column, value|
-      self[column].present? || self[column] = nil
+      self[column] = nil if self[column].kind_of? String and self[column].empty?
     end
   end
 end
