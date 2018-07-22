@@ -40,9 +40,8 @@ Given("the microcosm has a changeset {string} by {string} {string}") do |chid, d
   u = User.find_or_create_by(uid: user_id) do |u|
     u.uid = user_id
     u.name = display_name
-    u.provider = 'osm'
   end
-  @the_microcosm.microcosm_changesets.create!(changeset_id: chid, review_num: 0, user_id: u.uid)
+  @the_microcosm.microcosm_changesets.create!(changeset_id: chid, review_num: 0, user_id: u.id)
 end
 
 
