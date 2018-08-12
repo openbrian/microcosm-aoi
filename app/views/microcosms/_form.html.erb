@@ -70,6 +70,11 @@ To get a bounding box use Geofabrik's <a href="http://tools.geofabrik.de/calc/#t
     <%= form.text_area :description, id: :microcosm_description %> (decimal * 10^7)
   </div>
 
+  <div class="field">
+    <%= form.label :welcome_message %>
+    <%= form.text_area :welcome_message, id: :microcosm_welcome_message %>
+  </div>
+
   <div class="actions">
     <%= form.submit %>
   </div>

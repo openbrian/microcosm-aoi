@@ -5,17 +5,27 @@
 </h1>
 
 <div id='Changesets'>
-  <h2>Changesets</h2>
+  <h2>Recent Changesets</h2>
   <div class='changesets'>
+    <table>
+      <tr>
+        <th>Changeset Id</th>
+        <th>Timestamp</th>
+        <th>Editor</th>
+      </tr>
     <% current_changesets.each do |mc| %>
-      <ul>
-        <li>
-          <%= link_to microcosm_changeset_path(mc.id) do %>
-            <%= mc.changeset_id %> - <%= mc.changeset.closed_at %> - <%= mc.user.name %>
-          <% end %>
-        </li>
-      </ul>
+      <tr>
+        <td><%= mc.changeset_id %></td>
+        <td><%= mc.changeset.closed_at %></td>
+        <td><%= link_to mc.user.name, user_path(mc.user) %></td>
+        <td>
+        <%= link_to microcosm_changeset_path(mc.id), :class => 'mc-link-button' do %>
+          MC
+        <% end %>
+        </td>
+      </tr>
     <% end %>
+    </table>
   </div>
 </div>
 <%= button_to 'Discover 10,000', microcosms_discover_changesets_path, params: {microcosm_id: @microcosm.id, count: 10000} %> (This will take about 1 minute.)

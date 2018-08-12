@@ -15,9 +15,15 @@
 @import 'flexbox_sass_rails';
 @import 'microcosms';
 
+$green-light: #dcedd7;
+$green: #7ebc6f;
+$green-dark: #549b43;
+
 html
   {
   box-sizing: border-box;
+  background-color: #EEE;
+  margin: 0;
   }
 
 *, *:before, *:after
@@ -34,7 +40,6 @@ a {
 }
 
 body {
-  background-color: #fff;
   color: #444;
   font-family: verdana, arial, helvetica, sans-serif;
   line-height: 24px;
@@ -79,6 +84,22 @@ div {
   display: table;
 }
 
+.mc-link-button {
+  display: inline-block;
+  border-radius: 6px;
+  border: 1px solid $green;
+  padding: 5px 15px;
+  text-align: center;
+  text-decoration: none;
+  color: $green-dark;
+  &:hover {
+    background-color: $green-light;
+  }
+  &:visited {
+    color: $green;
+  }
+}
+
 .mc-row {
   @include fb-layout-row-column;
   @include fb-layout-column;
@@ -87,7 +108,7 @@ div {
   }
 }
 
-.new_link {
+.new_link, .edit_link {
   font-size: 60%;
   width: 3em;
   float: right;

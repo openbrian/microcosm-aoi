@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<h1>
+Editors of <%= @microcosm.name %>
+</h1>
+
+<div id='Changesets'>
+  <h2>Recent New Editors</h2>
+  <div class='changesets'>
+    <table>
+      <tr>
+        <th>Name</th>
+        <th>Changeset</th>
+        <th>Timestamp</th>
+        <th>Welcomed</th>
+      </tr>
+      <% recent_first_editors.each do |e| %>
+        <tr>
+          <td><%= link_to e.name, user_path(e) %></td>
+          <td><a href="https://openstreetmap.org/changeset/<%= e.first_edit.changeset_id %>"><%= e.first_edit.changeset_id %></a></td>
+          <% #TODO: This is the 1+N problem. %>
+          <td><%= e.first_edit.changeset.created_at %></td>
+          <td>
+            <% if not e.welcomed %>
+              <%= link_to welcome_editor_form_path(@microcosm.id, e.id), :class => 'mc-link-button' do %>
+                Welcome
+              <% end %>
+            <% end %>
+          </td>
+        </tr>
+      <% end %>
+    </table>
+  </div>
+</div>

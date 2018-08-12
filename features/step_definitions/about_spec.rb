@@ -22,10 +22,8 @@ end
 
 
 Given("the microcosm has a member {string} with uid {string} at provider {string}") do |name, uid, provider|
-  u = User.find_or_create_by(uid: uid) do |u|
-    u.uid = uid
+  u = User.find_or_initialize_by(uid: uid) do |u|
     u.name = name
-    u.provider = 'osm'
   end
   @the_microcosm.members.create(user: u)
 # visit "/users/new"
@@ -42,9 +40,8 @@ Given("the microcosm has a changeset {string} by {string} {string}") do |chid, d
   u = User.find_or_create_by(uid: user_id) do |u|
     u.uid = user_id
     u.name = display_name
-    u.provider = 'osm'
   end
-  @the_microcosm.microcosm_changesets.create!(changeset_id: chid, review_num: 0, user_id: u.uid)
+  @the_microcosm.microcosm_changesets.create!(changeset_id: chid, review_num: 0, user_id: u.id)
 end
 
 
