@@ -4,7 +4,7 @@ class MicrocosmChangesetsController < ApplicationController
   # GET /microcosm_changesets
   # GET /microcosm_changesets.json
   def index
-    @microcosm_changesets = MicrocosmChangeset.all
+    @microcosm_changesets = MicrocosmChangeset.last(25)
   end
 
   # GET /microcosm_changesets/1
